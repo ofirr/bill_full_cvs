@@ -1,3 +1,0 @@
-The source modules of type_check are not compatible with the current
-definition of FCP(:,?) .  Consult Eyal Yardeni for the status of the
-type checker.
