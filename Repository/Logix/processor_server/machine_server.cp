@@ -6,10 +6,10 @@ modified: Avshalom Houri 12/87
 Machine manager process
 
 Last update by		$Author: bill $
-		       	$Date: 1995/02/02 05:45:11 $
+		       	$Date: 1999/07/09 07:03:39 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.3 $
-			$Source: /baz/users/cvs-root/Source/processor_server/machine_server.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /spring/users1/Bill/Repository/Logix/processor_server/machine_server.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -134,6 +134,10 @@ server(In, Machine, Faults) + (Queue = [], BootVar = _, GCs = _) :-
 
     In ? {faults(Faults'?, Old), true^, done^} :
       Faults = Old? |
+	server;
+
+    In ? {signals(Machine', Old), true^, done^} :
+      Machine = Old |
 	server;
 
     In ? {poll(Poll?, Delay), true^, done^},
