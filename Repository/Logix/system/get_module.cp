@@ -3,11 +3,11 @@
 Module server
 William Silverman - 3/89
 
-Last update by		$Author: fcp $
-			$Date: 1993/12/31 10:41:33 $
+Last update by		$Author: bill $
+			$Date: 1999/07/09 07:02:53 $
 Currently locked by     $Locker:  $
 			$Revision: 1.1.1.1 $
-			$Source: /baz/users/cvs-root/Source/system/get_module.cp,v $
+			$Source: /spring/users1/Bill/Repository/Logix/system/get_module.cp,v $
 
 Copyright (C) 1989, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -90,7 +90,7 @@ compare_dates(Dates, Names, DateBin, NameBin)
 	self;
 
     Dates = [], Names = [],
-    "930530090000" @< Newest_Date :
+    "19930530090000" @< Newest_Date :
       DateBin = Newest_Date,
       NameBin = Newest_Name;
 
