@@ -37,6 +37,7 @@ else {
 my $sysname = ($client ? "rsh $client " : "") . "uname -ns";
 my ($system, $name) =
   split(/\s/, `$sysname`);
+$name =~ s/^(.*)\.wisdom\.weizmann\.ac\.il$/$1/;
 if ($client) {
   $system = `uname -s`;
   chomp $system;
