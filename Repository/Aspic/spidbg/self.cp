@@ -106,9 +106,9 @@ interpret(Id, RPCGoal) + (SpiOptions = []) :-
     true:
       make_channel(BadOption, _) |
 	spi_utils # parse_options(SpiOptions, Depth(1), BadOption(BadOption),
-		      Sender(no_sender), Which(none), Format(short)),
+		      			Which(note), Format(short)),
 	computation # events(Events),
-	do_debug(Events, Id, RPCGoal, [Depth,Sender,Which,Format]).
+	do_debug(Events, Id, RPCGoal, [Depth,Which,Format]).
 
 /*************************************************************************/
 procedure do_debug(NonEmpty_Events, Id, RPCGoal, SpiOptions).
