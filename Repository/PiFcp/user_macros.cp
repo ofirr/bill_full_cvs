@@ -4,9 +4,9 @@ User Shell default macros
 Ehud Shapiro, 01-09-86
 
 Last update by		$Author: bill $
-		       	$Date: 2000/01/05 15:10:24 $
+		       	$Date: 2000/01/16 08:57:12 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.5 $
+			$Revision: 1.6 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/user_macros.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -52,6 +52,7 @@ expand(Command, Cs) :-
 		" i(File)            - input file",
 		" pc(C)              - make pifcp channel C",
 		" ph                 - get this list",
+%		" pl / pl(Module)     - lint a Module",
 		" pr(C,M)            - receive M from pifcp channel C",
 		" ps(M,C)            - send M on pifcp channel C",
 		" re / re(No)        - resume computation No",
@@ -94,13 +95,12 @@ expand(Command, Cs) :-
 	expand;
 
     Command = spg(No) :
+      Command' = spg(No, []) |
+	expand;
+
+    Command = spg(No, Options) :
       Cs = [state(No, Goal, _, _),
 	    to_context([computation # display(term, Term, known(Term)),
-			pi_utils # show_goal(Goal, [], Term)]) 
-	   | Commands]\Commands;
-
-    Command = spg(Goal, Options) :
-      Cs = [to_context([computation # display(term, Term, known(Term)),
 			pi_utils # show_goal(Goal, Options, Term)]) 
 	   | Commands]\Commands;
 
