@@ -4,9 +4,9 @@ Precompiler for Pi Calculus procedures - call management.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/02/13 09:03:07 $
+		       	$Date: 2000/02/14 08:35:03 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.1 $
+			$Revision: 1.2 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pifcp/call.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -778,10 +778,6 @@ make_named_list(NamedClauses, Clauses, Diagnostic, Errors, NextErrors) :-
 	self;
 
     Reply =?= [] :
-      Diagnostic = _,
-      Errors = NextErrors;
-
-    Reply = ok :
       Diagnostic = _,
       Errors = NextErrors;
 
