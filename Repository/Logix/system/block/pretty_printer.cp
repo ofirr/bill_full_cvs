@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/block/pretty_printer.cp,v 1.1.1.1 1993/12/31 10:41:40 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/block/pretty_printer.cp,v 1.1.1.1 1999/07/09 07:03:11 bill Exp $ */
 /*
  *  Handles appropriate output of the block-module, according to the
  *  options.
@@ -9,7 +9,7 @@
 
 -export([pretty/3]).
 -language(compound).
--mode(trust).
+%-mode(trust).
 
 /******* PRETTY **************************************************************/
 

@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/block/auxils.cp,v 1.1.1.1 1993/12/31 10:41:39 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/block/auxils.cp,v 1.1.1.1 1999/07/09 07:03:11 bill Exp $ */
 /*
  *  This module contains all auxiliary procedures that are used by the
  *  block-compiler.
@@ -6,7 +6,7 @@
 
 -export([append_strings/3, member/3, server_lead/3]).
 -language(compound).
--mode(trust).
+%-mode(trust).
 
 
 procedure member(Any, [Any], Answer).
