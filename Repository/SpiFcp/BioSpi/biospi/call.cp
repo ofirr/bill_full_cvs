@@ -167,7 +167,7 @@ make_local_call(ProcessDefinition, Locals, Primes, Body1, Body2,
 
     StatusList = [all, Reply], Reply = `Name, string(Name) :
       VerifiedStatusList =
-	[blocked, type, baserate, refences, messages, weight, name, Reply];
+	[blocked, type, baserate, references, messages, weight, name, Reply];
 
     otherwise |
 	utilities#subtract_list(StatusList,
