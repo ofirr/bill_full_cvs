@@ -4,10 +4,10 @@ Precompiler for Pi Calculus procedures - servers.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/05/25 07:29:44 $
+		       	$Date: 2000/06/27 11:01:08 $
 Currently locked by 	$Locker:  $
-			$Revision: 2.1 $
-			$Source: /spring/users1/Bill/Repository/Psifcp/psifcp/servers.cp,v $
+			$Revision: 1.1 $
+			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/servers.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -339,7 +339,7 @@ serve_process_scope(In, ProcessDefinition, TypeRate, Notes,
     In ? guard_receive(Channel, Message, Index, Guards),
     ProcessDefinition =?= {Name, _Arity, ChannelNames, _LHSS, _CodeTuple} :
       Primes = _,
-      Guards = {Guard?, `psimr(ChannelName?) = ChannelList?},
+      Guards = {Guard?, `"Message." = ChannelList?},
       Notes ! variables(ChannelName?) |
 	parse_message(Message, Message', Multiplier, Name, Errors, Errors'?),
 	utilities#verify_channel(Name, Channel, ChannelNames, Locals,
@@ -353,7 +353,7 @@ serve_process_scope(In, ProcessDefinition, TypeRate, Notes,
 
     In ? guard_send(Channel, Message, Index, Guards),
     ProcessDefinition =?= {Name, _Arity, ChannelNames, _LHSS, _CodeTuple} :
-      Guards = {Guard?, `psims(ChannelName?) = ChannelList},
+      Guards = {Guard?, `"Message." = ChannelList},
       Notes ! variables([ChannelName'? | MsChannelNames'?]) |
 	parse_message(Message, Message', Multiplier, Name, Errors, Errors'?),
 	utilities#verify_channel(Name, Channel, ChannelNames, Locals,
@@ -922,7 +922,7 @@ make_guard_receive(Name, ChannelName, Index, Multiplier, Guard) :-
     true :
       VN = psich(ChannelName),
       Guard = {`ChannelName = {`"_", `VN, `"_"},
-		write_channel(receive(Name(ChannelName), `psimr(ChannelName),
+		write_channel(receive(Name(ChannelName), `"Message.",
 					Index, Multiplier, `psifcp(chosen)),
 				`VN)} .
 
@@ -932,7 +932,7 @@ make_guard_send(Name, ChannelName, Index, Multiplier, Guard) :-
     true :
       VN = psich(ChannelName),
       Guard = {`ChannelName = {`"_", `VN, `"_"},
-		write_channel(send(Name(ChannelName), `psims(ChannelName),
+		write_channel(send(Name(ChannelName), `"Message.",
 					Index, Multiplier, `psifcp(chosen)),
 				`VN)} .
 
