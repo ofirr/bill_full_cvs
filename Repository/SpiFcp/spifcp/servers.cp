@@ -4,10 +4,10 @@ Precompiler for Stochastic Pi Calculus procedures - servers.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/11/22 12:50:12 $
+		       	$Date: 2002/05/15 08:10:09 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.8 $
-			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/servers.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /net/spring/users1/Bill/Repository/SpiFcp/spifcp/servers.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -1116,13 +1116,6 @@ message_to_channels(Message, Name, ChannelNames, Locals, Underscore,
 				OkChannelName, Errors, Errors'),
 	self;
 
-    arg(Index, Message, `Channel),
-    Underscore =\= true, Index++ :
-      MsChannelNames ! OkChannelName? |
-	utilities#verify_channel(Name, Channel, ChannelNames, Locals,
-				OkChannelName, Errors, Errors'),
-	self;
-
     arg(Index, Message, _),
     Underscore =?= true, Index++ :
       MsChannelNames ! "_" |
@@ -1236,8 +1229,7 @@ parse_message(Name, ChannelNames, Message, MsChannelNames, Locals, Primes,
 	Locals, NextLocals, Primes, NextPrimes) :-
 
     ChannelNames = [ChannelName |Å†_],
-    string_to_dlist(ChannelName, CL, Prime) :
-      Prime = [39],
+    string_to_dlist(ChannelName, CL, [CHAR_PRIME]) :
       Locals = NextLocals,
       Primes = [{ChannelName, ChannelNamePrime?} | NextPrimes] |
 	list_to_string(CL, ChannelNamePrime);
