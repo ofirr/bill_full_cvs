@@ -1,6 +1,6 @@
 #!/bin/csh
 echo "user math m0th12 ">tttttttt
-echo "cd /WWW/mathusers/Seminars" >>tttttttt
+echo "cd /math/Seminars" >>tttttttt
 echo "lcd /home/system/Seminars" >>tttttttt
 echo "put sem_sched.dat "  >> tttttttt
 echo "close" >> tttttttt
