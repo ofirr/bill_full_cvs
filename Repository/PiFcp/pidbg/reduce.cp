@@ -4,9 +4,9 @@ Meta-Interpreter of algorithmic debugger.
 Yossi Lichtenstein, Peter Gerstenhaber
 
 Last update by          $Author: bill $
-			$Date: 2000/01/31 12:57:56 $
+			$Date: 2000/05/25 07:34:23 $
 Currently locked by     $Locker:  $
-			$Revision: 1.3 $
+			$Revision: 2.1 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pidbg/reduce.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -253,7 +253,7 @@ monitor(Commands,Signals,Pi_Input,PiOptions,Circuit,Channels) :-
 		monitor;
 
 	Pi_Input ? " goal "(Goal, PiGoal) |
-		pi_utils#show_goal(Goal, PiOptions, PiGoal),
+		pi_utils#show_goals(Goal, PiOptions, PiGoal),
 		monitor;
 
 	otherwise,
