@@ -4,10 +4,10 @@ Precompiler for Stochastic Pi Calculus procedures - call management.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/09/26 08:35:29 $
+		       	$Date: 2002/05/15 08:10:08 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.3 $
-			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/call.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /net/spring/users1/Bill/Repository/SpiFcp/spifcp/call.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -99,12 +99,12 @@ make_local_call(ProcessDefinition, Locals, Primes, Body1, Body2,
 
   prime_substitutes(Channel, ChannelP, SubsIn, SubsOut) :-
 
-    SubsIn ? (Substitute = Sub), Sub =?= Channel :
-      SubsOut ! (Substitute = ChannelP) |
+    SubsIn ? {Substitute, Sub}, Sub =?= Channel :
+      SubsOut ! {Substitute, ChannelP} |
 	self;
 
-    SubsIn ?  (Substitute = Sub), Sub =\= Channel :
-      SubsOut !  (Substitute = Sub) |
+    SubsIn ?  {Substitute, Sub}, Sub =\= Channel :
+      SubsOut !  {Substitute, Sub} |
 	self;
 
     SubsIn =?= [] :
