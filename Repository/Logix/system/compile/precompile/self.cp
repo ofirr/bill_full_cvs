@@ -6,10 +6,10 @@ Michael Hirsch,  27 January 1985
 William Silverman 08/85
 
 Last update by		$Author: bill $
-		       	$Date: 2002/06/07 12:19:58 $
+		       	$Date: 2002/06/22 04:16:15 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.3 $
-			$Source: /net/spring/users1/Bill/Repository/Logix/system/compile/precompile/self.cp,v $
+			$Revision: 1.4 $
+			$Source: /home/bill/Repository/Logix/system/compile/precompile/self.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -343,6 +343,7 @@ verify_name_mode(Done, Name, Languages, Mode, Name1, Mode1, Edited1, Edited2,
       Default = _,
       Languages = _;
 
+    unknown(Mode),
     Choices ? Name(NameMode) |
 	languages_name_mode(Languages, Name, NameMode, Mode, Mode'),
 	self;
