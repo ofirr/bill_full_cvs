@@ -3,10 +3,10 @@
  System library
 
 Last update by		$Author: bill $
-		       	$Date: 1994/06/12 08:54:13 $
+		       	$Date: 1999/07/09 07:03:34 $
 Currenly locked by 	$Locker:  $
-			$Revision: 1.2 $
-			$Source: /baz/users/cvs-root/Source/system/library_server/system_text.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /spring/users1/Bill/Repository/Logix/system/library_server/system_text.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -234,15 +234,6 @@ freeze(T,FO,FT,FVL) :-
 
 freeze(T,D,L,S,FT,FVL) :-
 	known(D),known(L),known(S), freeze(T,{D,L,S},FT^,FVL^) | true.
-
-dfreeze(T,FT,FVL,FTL) :-
-	dfreeze(T,[],FT^,FVL^,FTL^) | true.
-
-dfreeze(T,FO,FT,FVL,FTL) :-
-	dfreeze(T,FO,FT^,FVL^,FTL^) | true.
-
-dfreeze(T,TL,VL,FT,FVL,FTL) :-
-	known(TL),known(VL), dfreeze(T,{TL,VL},FT^,FVL^,FTL^) | true.
 
 melt(FT,MT,MVL) :-
 	known(FT) : melt(FT,MT,MVL) .
