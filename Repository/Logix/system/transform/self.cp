@@ -4,11 +4,11 @@ Language Transformer for FCP
 
 William Silverman 08/88
 
-Last update by		$Author: fcp $
-		       	$Date: 1993/12/31 10:42:37 $
+Last update by		$Author: bill $
+		       	$Date: 1999/07/09 07:03:17 $
 Currently locked by 	$Locker:  $
 			$Revision: 1.1.1.1 $
-			$Source: /baz/users/cvs-root/Source/system/transform/self.cp,v $
+			$Source: /spring/users1/Bill/Repository/Logix/system/transform/self.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -122,6 +122,15 @@ standard_language(L, To, Ls) :-
 
     L = d : To = _,		% The successor of c!
       Ls = [dfcp] ;
+
+    L = biospi : To = _,
+      Ls = [evaluate, biospi, compound, colon, typed] ;
+
+    L = psifcp : To = _,
+      Ls = [evaluate, spifcp, compound, colon, typed] ;
+
+    L = spifcp : To = _,
+      Ls = [evaluate, spifcp, compound, colon, typed] ;
 
     L = fcp :
       Ls = [To] ;		% cut here
