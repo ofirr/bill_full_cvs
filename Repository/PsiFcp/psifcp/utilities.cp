@@ -4,9 +4,9 @@ Precompiler for Pi Calculus procedures - utilities.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/06/27 11:01:10 $
+		       	$Date: 2000/07/26 07:16:32 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.1 $
+			$Revision: 1.2 $
 			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/utilities.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -246,7 +246,8 @@ ordered_merge(In1, In2, Out, Left, Right) :-
       Out ! I2 |
 	ordered_merge;
 
-    In1 = [I | _], In2 ? I :
+    In1 = [I | _], In2 ? I,
+    string(I) :
       Left ! I |
 	ordered_merge;
 
