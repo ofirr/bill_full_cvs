@@ -195,6 +195,11 @@ interface(T)
       }
     case 'e' :
       {
+	extern int sys_nerr;
+#ifndef LINUX
+	extern char *sys_errlist[];
+#endif
+
 	heapP ErrorString;
 	heapT ErrorNumber;
 	int error_number;
