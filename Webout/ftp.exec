@@ -1,5 +1,5 @@
 #!/bin/csh
-echo "user math m0th12 ">tttttttt
+echo "user math n1wm0th ">tttttttt
 echo "cd /math/Seminars" >>tttttttt
 echo "lcd /home/system/Seminars" >>tttttttt
 echo "put sem_sched.dat "  >> tttttttt

@@ -17,7 +17,7 @@ package=defaults
 	# The local_dir must exist FIRST
 	#local_dir_check=false
         remote_user=math
-	remote_password=m0th12
+	remote_password=n1wm0th
 	# Don't mirror file modes.  Set all dirs/files to these
 	dir_mode=0755
 	file_mode=0644
