@@ -1,4 +1,0 @@
-#! /bin/sh
-psi2t $@
-t2xys $1
-gnuplot
