@@ -107,7 +107,7 @@ expand(Command, Cs) :-
 		" {String}           - invoke UNIX shell sh with String",
 		"",
 		"        options for sp*, pdb and ptree:",
-		" none/active        - type of messages displayed",
+		" none/note/active   - type of messages displayed",
 		" sender/no_sender   - show name of message sender",
 		"        additional options for ptree:",
 		" prefix/execute     - order of tree display",
@@ -200,7 +200,7 @@ expand(Command, Cs) :-
 
     Command = ptree(Tree) :
       Cs = [to_context([spi_monitor # options(O, O),
-			spi_utils # show_tree(Tree, O?, Stream),
+			spi_utils # show_tree(Tree, [none | O?], Stream),
 			computation # display(stream, Stream)])
 	   | Commands]\Commands;
 
