@@ -1,14 +1,14 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/interface.c,v 1.3 2000/01/16 06:55:17 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/interface.c,v 1.4 2001/11/29 11:19:58 bill Exp $ */
 /*
 **	interface.c - unix interface functions.
 **
 **	Michael Hirsch and Bill Silverman		February 1986
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 2000/01/16 06:55:17 $
+**		       	     $Date: 2001/11/29 11:19:58 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.3 $
-**			     $Source: /spring/users1/Bill/Repository/FcpEmulator/interface.c,v $
+**			     $Revision: 1.4 $
+**			     $Source: /home/bill/Repository/FcpEmulator/interface.c,v $
 **
 */
 
@@ -195,11 +195,6 @@ interface(T)
       }
     case 'e' :
       {
-	extern int sys_nerr;
-#ifndef LINUX
-	extern char *sys_errlist[];
-#endif
-
 	heapP ErrorString;
 	heapT ErrorNumber;
 	int error_number;
@@ -210,13 +205,7 @@ interface(T)
 	integer_var(ErrorNumber, ++T);
 	error_number = Int_Val(ErrorNumber);
 	writable(ErrorString, ++T);
-	if ((0 <= error_number) && (error_number <= sys_nerr))
-	  make_string(sys_errlist[error_number], ErrorString);
-	else {
-          char buf[32];
-          sprintf(buf, "%d", error_number);
-	  make_string(buf, ErrorString);
-	}
+	make_string(strerror(error_number), ErrorString);
 	return(True);
       }
     case 'g' :
