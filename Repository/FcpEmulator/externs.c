@@ -1,11 +1,11 @@
-/* $Header: /home/bill/Repository/FcpEmulator/externs.c,v 1.3 2001/11/29 11:19:58 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/externs.c,v 1.6 2003/12/22 09:12:07 bill Exp $ */
 /*
  **	extern.c  -  errors handling, and reporting procedures.
  **
  **	Last update by 	     $Author: bill $
- **		       	     $Date: 2001/11/29 11:19:58 $
+ **		       	     $Date: 2003/12/22 09:12:07 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.3 $
+ **			     $Revision: 1.6 $
  **			     $Source: /home/bill/Repository/FcpEmulator/externs.c,v $
  */
 
@@ -80,7 +80,7 @@ int Type, Value;
     if (DbgFile != stderr) {
       fprintf(DbgFile, "%s: Signal No. = %d\n", (Constants[Type]+2), Value);
     }
-    psignal(Value, (Constants[Type]+2));
+    psignal(Value, (char *) (Constants[Type]+2));
     break;
   case SYSTEM:
     if (DbgFile != stderr) {
