@@ -82,7 +82,7 @@ typedef trailT	*trailP;
  ** Heap
  */
   
-#define	Def_HeapSize	2*512*1024*2*sizeof(heapT)
+#define	Def_HeapSize	5000*1024*2*sizeof(heapT)
 #define Heap_TH		200*1024
 
 #define Null	((heapP) 0)
