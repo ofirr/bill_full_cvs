@@ -43,7 +43,8 @@ if ($client) {
   chomp $system;
 }
 
-my @Auto = `ypcat -k auto.home`;
+#my @Auto = `ypcat -k auto.home`;
+my @Auto = `cat /home/www/Webout/auto.homek`;
 
 # Main loop
 
