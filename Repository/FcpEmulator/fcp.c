@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/emulator/fcp.c,v 1.2 1994/12/04 08:38:33 avshalom Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/fcp.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
 /*
 **  fcp.c  -  emulator startup
 */
@@ -9,7 +9,6 @@
 #include	<sys/fcntl.h>
 #endif
 #include	<string.h>
-#include	<ctype.h>
 #include	<sys/file.h>
 
 #include	"fcp.h"

@@ -1,10 +1,8 @@
-/* $Header: /baz/users/cvs-root/emulator/mut.c,v 1.1.1.1 1994/11/21 14:44:30 fcp Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/mut.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 
 #include	<stdio.h>
 #include	<string.h>
-#include	<ctype.h>
 #include	<sys/file.h>
-#include	<sys/vadvise.h>
 
 #include	"fcp.h"
 

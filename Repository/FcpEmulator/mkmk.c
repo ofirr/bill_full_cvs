@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/mkmk.c,v 1.5 2000/11/06 11:09:03 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/mkmk.c,v 1.6 2002/10/09 07:09:07 bill Exp $ */
 
 /*
 ** Creates makefile and static_link.h according to the following flags:
@@ -61,7 +61,6 @@
 
 #include	<stdio.h>
 #include	<string.h>
-#include	<ctype.h>
 #include	<sys/file.h>
 
 #define	True	1
