@@ -1,9 +1,10 @@
-/* $Header: /baz/users/cvs-root/Source/system/parse/syntax/fcp.cp,v 1.1.1.1 1993/12/31 10:42:33 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/parse/syntax/fcp.cp,v 1.1.1.1 1999/07/09 07:03:09 bill Exp $ */
 -language(syntax).
 
 yfx( ';'  , 1070).	% 18/6/89	1050
 yfx( '|'  , 1060).	% 18/6/89	1100
 yfy( ':'  , 1050).	% 18/6/89	1060
+yfx( '&'  , 1000).      % 16/11/99      new
 yfx( ','  , 1000).
 yfx( '!'  ,  900).	% 1/1/88	new
 xfy( '?'  ,  900).	% 4/5/88	new
