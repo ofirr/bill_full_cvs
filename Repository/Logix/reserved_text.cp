@@ -3,10 +3,10 @@
  Reserved guard predicate library
 
 Last update by		$Author: bill $
-		       	$Date: 1994/01/09 07:56:43 $
+		       	$Date: 1999/07/09 07:02:52 $
 Currenly locked by 	$Locker:  $
-			$Revision: 1.2 $
-			$Source: /baz/users/cvs-root/Source/reserved_text.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /spring/users1/Bill/Repository/Logix/reserved_text.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -72,9 +72,11 @@ shared_common_interface(Goal, GoalCommon, Done, CO, COC) :-
       common_interface(Common, Done, done([]), CO, COC).
 
 shared_activate_clause_MR(Module, Goal, Body, LO, RO, Interrupt, Result,
-				Goals, Id1
+				Goals, Id%1
 ) :-
+/******************* Only needed for dfcp 23/01/2000 *************************
   true : Id1 = Id? |
+******************************************************************************/
     activate(Module, reduce(Goal), meta(Body, Id, MR)),
       clause(Id?, LO, RO, MR, Interrupt, Result, Goals).
 
