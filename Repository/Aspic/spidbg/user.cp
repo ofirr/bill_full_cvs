@@ -4,10 +4,10 @@ User interface of Stochastic Pi Calculus algoritmic debugger.
 Yossi Lichtenstein, Peter Gerstenhaber, Bill Silverman
 
 Last update by          $Author: bill $
-			$Date: 2002/05/15 08:10:08 $
+			$Date: 2003/04/30 07:09:06 $
 Currently locked by     $Locker:  $
-			$Revision: 1.1.1.1 $
-			$Source: /home/bill/Repository/SpiFcp/spidbg/user.cp,v $
+			$Revision: 1.3 $
+			$Source: /home/bill/Repository/Aspic/spidbg/user.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -685,17 +685,13 @@ break					break(all/all,query,post)
 break(Predicate)			break(Predicate,query,post)
 break(Predicate,Query_Print)    	break(Predicate,Query_Print,post)
 break(Predicate,Query_Print,Pre_Post)
-break(Predicate/Arity,query_Print,Pre_Post).
 
 If Predicate is a constant, then it defaults to Predicate/all.  If predicate
 is a tuple, it is assumed to be a pattern, which will be matched against
 goals.  If a goal matches the pattern, then the breakpoint is taken.
-Predicate may also be of the form Predicate/Arity.  Predicate/all is satisfied 
-whenever the predicate is requested.  Predicate/Arity is satisfied whenever
-the predicate is requested, with a matching arity.  Note all is a reserved
-keyword, which implies that anything matches the condition.  Therefore all/3
-matches all predicates of arity 3, while p/all matches the predicate p,
-(ir)regardless of it's arity.
+Predicate may also be of the form Predicate/Arity.  Predicate/all is
+satisfied whenever the predicate is requested.  Note all is a reserved
+keyword, which implies that anything matches the condition.
 			"|Q]\Q,Format);
 
 	Subject = remove |
@@ -707,9 +703,7 @@ remove			remove the breakpoint that stopped this process.
 remove(Predicate)	remove the first breakpoint for this Predicate.
 remove(Predicate,Pre_Post) remove the first breakpoint at this location.
 
-Predicate may either be of the form Predicate/Arity or Pattern.  If the 
-Predicate is a constant, then it matches the first breakpoint with the
-same name.
+Predicate is a name.
 			"|Q]\Q,Format);
 
 	Subject = clear |
