@@ -5,7 +5,7 @@
 
 my $TmpDir = "/tmp";
 my $Target = "webout";
-my $TargetDir = "/WWW/mathusers";
+my $TargetDir = "/math";
 # temporary
 my $Rmirror = "/home/www/mirror-2.9/mirror";
 
