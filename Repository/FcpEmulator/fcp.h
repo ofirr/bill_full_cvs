@@ -1,14 +1,14 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/fcp.h,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/fcp.h,v 1.2 2000/01/16 06:55:14 bill Exp $ */
 /*
  **	fcp.h  -  defines data structures, machine word format
  **		  and various macros
  **	NOTE when changing macros, to leave things as single occurence.
  **
  **	Last update by 	     $Author: bill $
- **		       	     $Date: 1999/07/01 07:15:10 $
+ **		       	     $Date: 2000/01/16 06:55:14 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.1.1.1 $
- **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/fcp.h,v $
+ **			     $Revision: 1.2 $
+ **			     $Source: /home/bill/Repository/FcpEmulator/fcp.h,v $
  */
 
 #define False	 0
@@ -182,31 +182,8 @@ typedef trailT	*trailP;
 
 #define HOByteMask	0xf0000000
 
-#ifdef	ULTRIX
- #ifndef LINUX
-#define	HOByte	0x10000000
- #endif
-#endif
-
-#ifdef	SGI
-#define	HOByte	0x10000000
-#endif
-
-#ifdef	HPUX
-#define	HOByte	0x40000000
-#endif
-
-#ifdef	LINUX
-#define	HOByte	0x40000000
-#endif
-
-#ifdef	SUNOS5d3
-#define	HOByte	0x00000000
-#endif
-
-#ifdef	SUNOS4d1d3
-#define	HOByte	0x00000000
-#endif
+unsigned int HOByte;
+#define	HOPage	0x10000000
 
 #define Var_Val(V)	((heapP) ((((V) >> VarShift) & VarValMask) | HOByte))
 
