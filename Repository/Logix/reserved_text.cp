@@ -3,9 +3,9 @@
  Reserved guard predicate library
 
 Last update by		$Author: bill $
-		       	$Date: 1999/07/09 07:02:52 $
+		       	$Date: 2000/01/23 08:53:22 $
 Currenly locked by 	$Locker:  $
-			$Revision: 1.1.1.1 $
+			$Revision: 1.2 $
 			$Source: /spring/users1/Bill/Repository/Logix/reserved_text.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -71,20 +71,31 @@ shared_common_interface(Goal, GoalCommon, Done, CO, COC) :-
     GoalCommon = {Goal, Common} |
       common_interface(Common, Done, done([]), CO, COC).
 
-shared_activate_clause_MR(Module, Goal, Body, LO, RO, Interrupt, Result,
+shared_activate_clause_MR(Module, Goal, Body, MK, LO, RO, Interrupt, Result,
 				Goals, Id%1
 ) :-
+  MK = meta :  
 /******************* Only needed for dfcp 23/01/2000 *************************
-  true : Id1 = Id? |
+    Id1 = Id?,
 ******************************************************************************/
-    activate(Module, reduce(Goal), meta(Body, Id, MR)),
-      clause(Id?, LO, RO, MR, Interrupt, Result, Goals).
+    activate(Module, reduce(Goal), meta(Body, Id, MR)) |
+      clause(Id?, LO, RO, MR, Interrupt, Result, Goals, Goal);
+
+  MK = meta_suspend :
+/******************* Only needed for dfcp 23/01/2000 *************************
+    Id1 = Id?,
+******************************************************************************/
+    activate(Module, reduce(Goal), meta_suspend(Body, Id, MR, Suspend)) |
+      clause(Id?, LO, RO, MR, Interrupt, Result, Goals, Suspend).
 
 shared_activate_reduce(Module, Functor,Goal, MK, LO, RO, Interrupt, CO) :-
-  true : 
+  MK = meta : 
     activate(Module, Functor(Goal), MK(Body, _, MR)) |
-      reduce(Body, LO, RO, MR, Goal, Interrupt, Module, CO, MK).
+      reduce(Body, LO, RO, MR, Goal, Goal, Interrupt, Module, CO, MK);
 
+  MK = meta_suspend : 
+    activate(Module, Functor(Goal), MK(Body, _, MR, Suspend)) |
+      reduce(Body, LO, RO, MR, Goal, Suspend, Interrupt, Module, CO, MK).
 
 shared_common_reply(Ready, LO, RO, Signals, COC, In, Out) :-
 
