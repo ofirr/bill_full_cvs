@@ -46,5 +46,5 @@ package=defaults
 
 
 package=Msgs
-	remote_dir=/WWW/mathusers/msgs
+	remote_dir=/math/msgs
 	local_dir=/home/msgs/

@@ -45,5 +45,5 @@ package=defaults
 
 
 package=Seminars
-        remote_dir=/WWW/mathusers/Seminars/WWW/
+        remote_dir=/math/Seminars/WWW/
         local_dir=/home/system/Seminars/WWW/
