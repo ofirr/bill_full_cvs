@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/file.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/file.c,v 1.2 1999/11/28 12:33:13 bill Exp $ */
 /*
 **	file.c - foreign kernals for handling files.
 **
@@ -28,7 +28,9 @@
 #endif
 #include	<stdlib.h>
 
+#ifndef LINUX
 extern char *sys_errlist[];
+#endif
 
 extern FILE *DbgFile;
 

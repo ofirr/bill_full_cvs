@@ -1,14 +1,14 @@
-/* $Header: /baz/users/cvs-root/emulator/fcp.h,v 1.2 1994/12/04 07:45:29 avshalom Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/fcp.h,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 /*
  **	fcp.h  -  defines data structures, machine word format
  **		  and various macros
  **	NOTE when changing macros, to leave things as single occurence.
  **
- **	Last update by 	     $Author: avshalom $
- **		       	     $Date: 1994/12/04 07:45:29 $
+ **	Last update by 	     $Author: bill $
+ **		       	     $Date: 1999/07/01 07:15:10 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.2 $
- **			     $Source: /baz/users/cvs-root/emulator/fcp.h,v $
+ **			     $Revision: 1.1.1.1 $
+ **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/fcp.h,v $
  */
 
 #define False	 0
@@ -183,7 +183,9 @@ typedef trailT	*trailP;
 #define HOByteMask	0xf0000000
 
 #ifdef	ULTRIX
+ #ifndef LINUX
 #define	HOByte	0x10000000
+ #endif
 #endif
 
 #ifdef	SGI
@@ -191,6 +193,10 @@ typedef trailT	*trailP;
 #endif
 
 #ifdef	HPUX
+#define	HOByte	0x40000000
+#endif
+
+#ifdef	LINUX
 #define	HOByte	0x40000000
 #endif
 

@@ -1,13 +1,13 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/interface.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/interface.c,v 1.2 1999/11/28 12:33:14 bill Exp $ */
 /*
 **	interface.c - unix interface functions.
 **
 **	Michael Hirsch and Bill Silverman		February 1986
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 1999/07/01 07:15:09 $
+**		       	     $Date: 1999/11/28 12:33:14 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.1.1.1 $
+**			     $Revision: 1.2 $
 **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/interface.c,v $
 **
 */
@@ -195,7 +195,9 @@ interface(T)
     case 'e' :
       {
 	extern int sys_nerr;
+#ifndef LINUX
 	extern char *sys_errlist[];
+#endif
 
 	heapP ErrorString;
 	heapT ErrorNumber;

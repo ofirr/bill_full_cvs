@@ -1,12 +1,12 @@
-/* $Header: /baz/users/cvs-root/emulator/kernels.c,v 1.2 1994/12/04 08:38:41 avshalom Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
 /*
 **	kernels.c  -  kernel predicates.
 **
-**	Last update by:	     $Author: avshalom $
-**		       	     $Date: 1994/12/04 08:38:41 $
+**	Last update by:	     $Author: bill $
+**		       	     $Date: 1999/07/01 07:15:09 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.2 $
-**			     $Source: /baz/users/cvs-root/emulator/kernels.c,v $
+**			     $Revision: 1.1.1.1 $
+**			     $Source: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v $
 */
 
 #include	<stdio.h>
@@ -723,7 +723,9 @@ do_exceptions()
 	    PStr = produce_string("Unknown signal");
 	  }
 	  else {
+#ifndef LINUX
 	    extern char *sys_siglist[];
+#endif
 
 	    PStr = produce_string("sys_siglist[((int) *ERRP)]");
 	  }	    
@@ -741,7 +743,9 @@ do_exceptions()
 	    PStr = produce_string("Unknown error");
 	  }
 	  else {
+#ifndef LINUX
 	    extern char *sys_errlist[];
+#endif
 
 	    PStr = produce_string("sys_errlist[((int) *ERRP)]");
 	  }	    
@@ -1093,7 +1097,9 @@ do_link(Arg)
 
     fprintf(DbgFile, "system(%s) = %d\n", HP, Code);
     if (Code != 0) {
+#ifndef LINUX
       extern char *sys_errlist[];
+#endif
       
       fprintf(DbgFile, "error = %s\n", sys_errlist[errno]);
     }
