@@ -4,9 +4,9 @@ Precompiler for Pi Calculus procedures - call management.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/02/27 07:56:33 $
+		       	$Date: 2000/03/01 08:00:13 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.4 $
+			$Revision: 1.5 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pifcp/call.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -778,7 +778,7 @@ make_sum_procedure(Mode, Name, Writes, RHS, Tuple, Entries, NextEntries) :-
 	make_choice_atom(Atom, MixedChoices, [`pifcp(chosen), Sender],
 				ChoiceAtom);
 
-    /* receive, none */
+    /* receive, conflict */
     Mode =\= send, Mode =\= mixed :
       Name = _,
       Writes = _,
