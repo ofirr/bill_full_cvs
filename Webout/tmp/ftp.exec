@@ -1,0 +1,9 @@
+#!/bin/csh
+echo "user math m0th12 ">tttttttt
+echo "cd /WWW/mathusers/Seminars" >>tttttttt
+echo "lcd /home/system/Seminars" >>tttttttt
+echo "put sem_sched.dat "  >> tttttttt
+echo "close" >> tttttttt
+echo "bye" >> tttttttt
+#ftp -n webout<tttttttt
+#/bin/rm tttttttt $1
