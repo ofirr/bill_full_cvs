@@ -5,11 +5,11 @@ Precompiler for FCP
 Michael Hirsch,  27 January 1985
 William Silverman 08/85
 
-Last update by		$Author: fcp $
-		       	$Date: 1993/12/31 10:42:01 $
+Last update by		$Author: bill $
+		       	$Date: 1999/07/09 07:03:36 $
 Currently locked by 	$Locker:  $
 			$Revision: 1.1.1.1 $
-			$Source: /baz/users/cvs-root/Source/system/compile/precompile/self.cp,v $
+			$Source: /spring/users1/Bill/Repository/Logix/system/compile/precompile/self.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -242,6 +242,7 @@ module_kind(	normal, Terms, {Attributes, Imported, LPIds, Ids},
 ) :-
 	edit_attributes(Attributes,
 			[mode(Mode), export(Exports), import(_), monitor(Name),
+			 entries(Entries),
 			 deadcode(DiagD), multiples(DiagM), undefined(DiagU)], 
 			Edited, Done
 	),
@@ -250,11 +251,12 @@ module_kind(	normal, Terms, {Attributes, Imported, LPIds, Ids},
 	unify_without_failure({Done?, DiagD}, done(off)),
 	unify_without_failure({Done?, DiagM}, done(on)),
 	unify_without_failure({Done?, DiagU}, done(on)),
+	unify_without_failure({Done?, Entries}, done([])),
 /***************** all ***** off ****** on ******* on *****/
 	verify_name_mode(Done, Name, Mode, Name1, Mode1, 
 			Edited1, Edited?, Output, Output1
 	),
-	verify_export(  Name1, Exports, LPIds, Ids,
+	verify_export(  Name1, Exports, Entries, LPIds, Ids,
 			Exports1, Exports2, Exported, 
 			Output1, Output2
 	),
@@ -364,10 +366,11 @@ verify_monitor(Name, Attributes, Terms, Module) :-
 	 	| Terms ] .
 
 
-verify_export(Name, Exports, LPIds, Ids, Exports1, Exports2, Exported, 
+verify_export(Name, Exports, Entries, LPIds, Ids, Exports1, Exports2, Exported, 
 			Output1, Output2
 ) :-
     Name = [], Exports = all : LPIds = _,
+      Entries = _,
       Ids = Exported,
       Exports1 = all,
       Exports2 = all,
@@ -383,10 +386,10 @@ verify_export(Name, Exports, LPIds, Ids, Exports1, Exports2, Exported,
     otherwise : Name = _, Ids = _,
       Exported = [attributes/1 | Exports1],
       Exports2 = Exported |
-	parse_exports(Exports, LPIds , Exports1, Output1, Output2).
+	parse_exports(Exports, Entries, LPIds , Exports1, Output1, Output2).
 
 
-parse_exports(Exports, LPIds, ExportList, Output1, Output2) :-
+parse_exports(Exports, Entries, LPIds, ExportList, Output1, Output2) :-
 
     Exports ? Id,
     Id = F/A, string(F), A >=0 :
@@ -403,7 +406,12 @@ parse_exports(Exports, LPIds, ExportList, Output1, Output2) :-
       Output1 ! export_syntax_error(BadId) |
 	self;
 
-    Exports = [] : LPIds = _,
+    Exports = [], Entries =\= [] :
+      Exports' = Entries,
+      Entries' = [] |
+	self;
+
+    Exports = [], Entries = [] : LPIds = _,
       ExportList = [],
       Output1 = Output2 ;
 
