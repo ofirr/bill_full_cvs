@@ -4,9 +4,9 @@ Precompiler for Pi Calculus procedures - servers.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/07/26 07:19:07 $
+		       	$Date: 2000/09/26 08:35:29 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.3 $
+			$Revision: 1.4 $
 			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/servers.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -587,7 +587,7 @@ search_progeny(Functor, Progeny, CallType, CallDefinition, Out, NextOut) :-
 **
 ** Input:
 **
-**   PiLHS is from a process/2 request.
+**   PiLHS is from a process/4 request.
 **
 **   TypeRate is the module type and the default base rate.
 **
@@ -753,7 +753,7 @@ parse_lhs(PiLHS, TypeRate, Name, Arity, ParamList, ChannelList, NewChannelList,
 	unify_without_failure(NewChannelList, []);
 
     PiLHS = PiLHS' + Channels,
-    writable(ChannelList) :
+    PiLHS' =\= (_ + _) :
       ChannelList' = ChannelList?,
       NewChannelList' = NewChannelList? |
 	utilities#untuple_predicate_list(',', Channels, Channels'),
