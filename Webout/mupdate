@@ -1,4 +1,7 @@
 #!/bin/sh
 #./auto_homes -ecymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
 #./auto_homes -scymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
-/home/www/Webout/auto_homes  /home/www/Webout/mhomepages
+# Exclude math01-rd to avoid logging in users. 
+/home/www/Webout/auto_homes -emath01-rd /home/www/Webout/mhomepages
+# Users from math01-rd are executed locally on nufar.
+/home/www/Webout/auto_homes -smath01-rd /home/www/Webout/mhomepages
