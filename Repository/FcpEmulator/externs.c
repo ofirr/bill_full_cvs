@@ -1,12 +1,12 @@
-/* $Header: /baz/users/cvs-root/emulator/externs.c,v 1.3 1994/12/04 08:38:30 avshalom Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/externs.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
 /*
  **	extern.c  -  errors handling, and reporting procedures.
  **
- **	Last update by 	     $Author: avshalom $
- **		       	     $Date: 1994/12/04 08:38:30 $
+ **	Last update by 	     $Author: bill $
+ **		       	     $Date: 1999/07/01 07:15:09 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.3 $
- **			     $Source: /baz/users/cvs-root/emulator/externs.c,v $
+ **			     $Revision: 1.1.1.1 $
+ **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/externs.c,v $
  */
 
 #include	<stdio.h>
@@ -720,11 +720,9 @@ print_stats()
   fprintf(DbgFile, "Collections  : %d\n", Collections);
   fprintf(DbgFile, "\n");
 
-#ifdef	SUNOS4d1d3
   fprintf(DbgFile, "Reductions Time is %d milliseconds, %.2f RPS\n",
 	  (CpuTime - GCTime) / 1000,
 	  (Reductions*1000000.0)/((CpuTime - GCTime) * 1.0));
-#endif
 
   if (CurHeap < OtherHeap) {
     fprintf(DbgFile, "Used Total of %d Heap Words\n",

@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/notify.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/notify.c,v 1.2 2000/01/16 06:55:20 bill Exp $ */
 
 #include	<stdio.h>
 extern	FILE *DbgFile, *OutFile;
@@ -1089,32 +1089,27 @@ int signal_event(Sig)
 /* Statistics. Adopted from Jaakov Levy. */
 
 
-#ifdef	SUNOS4d1d3
 static struct rusage	R_Start, R_End;
-#endif
 
 start_time()
 {
   extern int errno;
 
-#ifdef	SUNOS4d1d3
   if (getrusage(RUSAGE_SELF, &R_Start) < 0) {
     do_exit("getrusage - RUSAGE_SELF", SYSTEM, errno, False);
   }
-#endif
 }
 
 stop_time()
 {
   extern int errno;
   
-#ifdef	SUNOS4d1d3
   if (getrusage(RUSAGE_SELF, &R_End) < 0) {
     do_exit("getrusage - RUSAGE_SELF", SYSTEM, errno, False);
   }
   CpuTime += R_End.ru_utime.tv_usec - R_Start.ru_utime.tv_usec;
   CpuTime += (R_End.ru_utime.tv_sec - R_Start.ru_utime.tv_sec) * 1000000;
-#endif
+
   if (CpuTime == 0) {
     CpuTime = 1; /* At least 1 microsecond..	*/
   }
