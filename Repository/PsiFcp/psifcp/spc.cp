@@ -564,12 +564,6 @@ extract_psi_channels(Variables, Channels) :-
     Variables = [] :
       Channels = [].
 
-/*
-** The following procedures are necessary because the assembler
-** cannot handle real values in a tuple, except for the last
-** element.  Note that BaseRate IS the last element of a tuple,
-** and therefor is handled correctly.
-*/
 
 kluge_news(RHSS, NewRHSS) :-
     true :
