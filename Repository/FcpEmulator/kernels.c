@@ -1,12 +1,12 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v 1.2 2000/01/16 06:55:18 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/kernels.c,v 1.3 2001/11/29 11:19:58 bill Exp $ */
 /*
 **	kernels.c  -  kernel predicates.
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 2000/01/16 06:55:18 $
+**		       	     $Date: 2001/11/29 11:19:58 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.2 $
-**			     $Source: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v $
+**			     $Revision: 1.3 $
+**			     $Source: /home/bill/Repository/FcpEmulator/kernels.c,v $
 */
 
 #include	<stdio.h>
@@ -738,18 +738,11 @@ do_exceptions()
 	*HP++ = Ref_Word((Constants[SYSTEM]));
 	{
 	  register heapP PStr;
-	  extern int sys_nerr;
+	  char *EStr;
+	  extern char *strerror(int);
 
-	  if ((((int) *ERRP) < 0) || (((int) *ERRP) >= sys_nerr)) {
-	    PStr = produce_string("Unknown error");
-	  }
-	  else {
-#ifndef LINUX
-	    extern char *sys_errlist[];
-#endif
-
-	    PStr = produce_string("sys_errlist[((int) *ERRP)]");
-	  }	    
+	  EStr = (char *)strerror((int) *ERRP);
+	  PStr = produce_string((EStr == NULL) ? "Unknown error" : EStr);
 	  *HP++ = Ref_Word(PStr);
 	}
 	break;
