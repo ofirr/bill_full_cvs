@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/block/tree/rename/clause.cp,v 1.1.1.1 1993/12/31 10:41:41 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/block/tree/rename/clause.cp,v 1.1.1.1 1999/07/09 07:03:13 bill Exp $ */
 /*
  *  Split a clause into its component atoms; each of the atoms is
  *  renamed as appropriate.
@@ -6,7 +6,7 @@
 
 -export([transform/4]).
 -language(compound).
--mode(trust).
+%-mode(trust).
 
 /************************* T R A N S F O R M / 4 *****************************/
 

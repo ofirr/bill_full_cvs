@@ -1,11 +1,11 @@
-/* $Header: /baz/users/cvs-root/Source/system/block/tree/rename/self.cp,v 1.1.1.1 1993/12/31 10:41:41 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/block/tree/rename/self.cp,v 1.1.1.1 1999/07/09 07:03:13 bill Exp $ */
 /*
  *  Rename Atoms for all procedural clauses of module.
  */
 
 -export([clauses/6, goal/4]).
 -language(compound).
--mode(trust).
+%-mode(trust).
 
 /************************* C L A U S E S / 6 *********************************/
 
