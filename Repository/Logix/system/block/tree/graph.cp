@@ -1,4 +1,4 @@
-/* $Header: /net/spring/users1/Bill/Repository/Logix/system/block/tree/graph.cp,v 1.2 2002/05/29 08:04:03 bill Exp $ */
+/* $Header: /home/bill/Repository/Logix/system/block/tree/graph.cp,v 1.3 2002/06/05 18:32:59 bill Exp $ */
 /*
  *  Transform the hierarchical tree into a graph.
  */
@@ -280,7 +280,7 @@ format_rpc(Call, Graph, Goal) :-
 
 cumulate_entries(Graph)  :-
 
-    Graph = {_, "", [], EntriesTuple, _, SubGraphs} :
+    Graph = {_, "", _, EntriesTuple, _, SubGraphs} :
       EntriesTuple = Entries(_) |
 	cumulate_sub_entries(SubGraphs, Entries, []);
 
