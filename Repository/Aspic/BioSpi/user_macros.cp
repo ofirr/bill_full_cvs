@@ -4,10 +4,10 @@ User Shell default macros
 Ehud Shapiro, 01-09-86
 
 Last update by		$Author: bill $
-		       	$Date: 2003/06/20 14:18:53 $
+		       	$Date: 2004/05/31 06:35:07 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.14 $
-			$Source: /home/bill/Repository/SpiFcp/BioSpi/user_macros.cp,v $
+			$Revision: 1.15 $
+			$Source: /home/bill/Repository/Aspic/BioSpi/user_macros.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -93,7 +93,9 @@ expand(Command, Cs) :-
 		" ps(M,C)            - send M on BioSpi channel C",
 		" rtr / rtr(Ambient) - ambient tree with resolvent",
 		" spc(C)             - Show BioSpi channel",
-		" record(GS, F, L)   - run Goals, record to File until Limit.",
+                " randomize          - set all new channels to randomize",
+                " serialize          - set all new channels to serialize",
+ 		" record(GS, F, L)   - run Goals, record to File until Limit.",
 		" record(GS,F,L,S,O) - run Goals, record to File until Limit,",
 		"                      scaled by Scale, with format Option.",
 		" run(GS)            - run Goals.",
@@ -134,6 +136,14 @@ expand(Command, Cs) :-
 
     Command = ps(M, C, N) :
       Cs = [to_context(spi_utils # send(M, C, N)) | Commands]\Commands;
+
+    Command = randomize :
+      Cs = [to_context([spi_monitor # randomize])
+           | Commands]\Commands;
+
+    Command = serialize :
+      Cs = [to_context([spi_monitor # serialize])
+           | Commands]\Commands;
 
     Command = spc(C) :
       Cs = [to_context([spi_monitor # options(O, O),
