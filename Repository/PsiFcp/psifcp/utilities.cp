@@ -4,10 +4,10 @@ Precompiler for Pi Calculus procedures - utilities.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/05/25 07:29:43 $
+		       	$Date: 2000/06/27 11:01:10 $
 Currently locked by 	$Locker:  $
-			$Revision: 2.1 $
-			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/psiutils.cp,v $
+			$Revision: 1.1 $
+			$Source: /spring/users1/Bill/Repository/PsiFcp/psifcp/utilities.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -298,7 +298,8 @@ verify_channel(Name, ChannelName, ChannelNames, Locals, OkChannelName,
 	defined_channel;
 
     ChannelName = `ChannelName',
-    string(ChannelName'), ChannelName' =\= "_", ChannelName' =\= "" |
+    nth_char(1, ChannelName', C),
+    ascii('A') =< C, C =< ascii('Z') |
 	defined_channel;
 
     otherwise :
