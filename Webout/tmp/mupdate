@@ -1,0 +1,4 @@
+#!/bin/sh
+#./auto_homes -ecymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
+#./auto_homes -scymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
+/home/www/Webout/auto_homes  /home/www/Webout/mhomepages
