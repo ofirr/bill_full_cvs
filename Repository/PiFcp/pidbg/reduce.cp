@@ -4,9 +4,9 @@ Meta-Interpreter of algorithmic debugger.
 Yossi Lichtenstein, Peter Gerstenhaber
 
 Last update by          $Author: bill $
-			$Date: 2000/01/23 11:56:33 $
+			$Date: 2000/01/25 13:43:43 $
 Currently locked by     $Locker:  $
-			$Revision: 1.1 $
+			$Revision: 1.2 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pidbg/reduce.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -22,6 +22,8 @@ RPCGoal ::= {`'#', Module, Goal}.
 Goals	::= Goal - Goal.
 NewGoal	::= Goal.
 Body    ::= Goal.
+PiOption::= String; Integer.
+PiOptions ::= PiOption; [PiOption].
 Id	::= Number.
 Id_Abort::= Id ; 'Abort'.
 Time	::= Integer.
@@ -55,9 +57,10 @@ Goal_Info ::= {Goal, Open_Context}.
 Debug_Info ::= {Breaks, Depth, Execute_or_Interpret, Channels}.
 NewDebug_Info ::= Debug_Info.
 Channel	::= Vector.
-Channels::= {IO, User}.
+Channels::= {IO, User, Pi}.
 IO	::= Channel.
 User	::= Channel.
+Pi      ::= Channel.
 Execute_or_Interpret ::= execute; interpret.
 Trace_Info ::= {Trace, Trace}.
 State	::= started; terminated; running; suspended.
