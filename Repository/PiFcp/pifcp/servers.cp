@@ -4,9 +4,9 @@ Precompiler for Pi Calculus procedures - servers.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2000/04/16 08:04:01 $
+		       	$Date: 2000/05/25 07:29:44 $
 Currently locked by 	$Locker:  $
-			$Revision: 2.0 $
+			$Revision: 2.1 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pifcp/servers.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -319,6 +319,11 @@ serve_process_scope(In, ProcessDefinition, Means, Notes,
 				In'', In'?, Errors, Errors'?, CallDefinition),
 	add_call(CallDefinition, Body2, Notes, Notes'),
 	self;
+
+    In ? end_clause :
+      Locals = _,
+      Primes = _ |
+	self + (Locals = [], Primes = []);
 
     In ? error(Description),
     arg(1, ProcessDefinition, Name) :
