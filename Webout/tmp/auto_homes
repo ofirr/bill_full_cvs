@@ -36,7 +36,7 @@ my $rsh = $command ? "rsh" : "echo";
 
 #my @auto = `ypcat auto.home`;
 #my @auto = `ypcat  auto.home |  /bin/nawk '{print $NF}'`;
-my @auto = `cat /home/www/Webout/auto.home`;
+my @auto = `cat /home/www/Webout/auto.homek`;
 
 # Main loop
 
