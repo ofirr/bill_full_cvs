@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/lint/dict.cp,v 1.1.1.1 1993/12/31 10:42:10 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/lint/dict.cp,v 1.1.1.1 1999/07/09 07:03:10 bill Exp $ */
 /*
  *
  * dict serves the dictionary of the lint program.
@@ -41,7 +41,7 @@
 
 
 -export([dict/2]).
--mode(trust).
+%-mode(trust).
 -language(compound).
 
 procedure dict(Messages, Flags).

@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/lint/defs.cp,v 1.2 1994/03/04 08:27:57 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/lint/defs.cp,v 1.1.1.1 1999/07/09 07:03:10 bill Exp $ */
 /*
  *
  * defs identifies predefined procedures and checks the legality of
@@ -31,7 +31,7 @@
  */
 
 -export([check_call/7]).
--mode(trust).
+%-mode(trust).
 -language(compound).
 
 procedure check_call(Any, Proc, Part, Atom, Tuple, G-dict, Flag).
