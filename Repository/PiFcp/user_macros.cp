@@ -4,9 +4,9 @@ User Shell default macros
 Ehud Shapiro, 01-09-86
 
 Last update by		$Author: bill $
-		       	$Date: 2000/01/03 13:15:48 $
+		       	$Date: 2000/01/05 15:10:24 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.4 $
+			$Revision: 1.5 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/user_macros.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -81,13 +81,12 @@ expand(Command, Cs) :-
       Cs = [to_context(pi_utils # send(M, C)) | Commands]\Commands;
 
     Command = spc(C) :
-      Cs = [to_context([computation # display(stream,Results,[type(ground)]),
-      			pi_utils # show_channel(C, [], Results)]) 
-	   | Commands]\Commands;
+      Command' = spc(C, []) |
+	expand;
 
     Command = spc(C, Options) :
-      Cs = [to_context([computation # display(stream,Results,[type(ground)]),
-			pi_utils # show_channel(C, Options, Results)]) 
+      Cs = [to_context([computation # display(term, Channel, known(Channel)),
+			pi_utils # show_channel(C, Options, Channel)]) 
 	   | Commands]\Commands;
 
     Command = spg :
@@ -96,12 +95,12 @@ expand(Command, Cs) :-
 
     Command = spg(No) :
       Cs = [state(No, Goal, _, _),
-	    to_context([computation # display(term, Term,[type(ground)]),
+	    to_context([computation # display(term, Term, known(Term)),
 			pi_utils # show_goal(Goal, [], Term)]) 
 	   | Commands]\Commands;
 
     Command = spg(Goal, Options) :
-      Cs = [to_context([computation # display(stream,Term,[type(ground)]),
+      Cs = [to_context([computation # display(term, Term, known(Term)),
 			pi_utils # show_goal(Goal, Options, Term)]) 
 	   | Commands]\Commands;
 
@@ -115,7 +114,7 @@ expand(Command, Cs) :-
 
     Command = spr(No, Options) :
       Cs = [resolvent(No, Resolvent),
-	    to_context([computation # display(stream, Stream, [type(ground)]),
+	    to_context([computation # display(stream, Stream, []),
 			pi_utils # show_resolvent(Resolvent, Options, Stream)])
 	   | Commands]\Commands;
 
@@ -127,7 +126,7 @@ expand(Command, Cs) :-
 	expand;
 
     Command = ptree(Tree, Options) :
-      Cs = [to_context([computation # display(stream, Stream, [type(ground)]),
+      Cs = [to_context([computation # display(stream, Stream, []),
 			pi_utils # show_tree(Tree, Options, Stream)]) 
 	   | Commands]\Commands;
 
