@@ -3,11 +3,11 @@ Main control of algorithmic debugger.
 
 Yossi Lichtenstein, Peter Gerstenhaber
 
-Last update by          $Author: fcp $
-			$Date: 1993/12/31 10:42:03 $
+Last update by          $Author: bill $
+			$Date: 1999/07/09 07:03:21 $
 Currently locked by     $Locker:  $
 			$Revision: 1.1.1.1 $
-			$Source: /baz/users/cvs-root/Source/system/debug/self.cp,v $
+			$Source: /spring/users1/Bill/Repository/Logix/system/debug/self.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -440,6 +440,10 @@ request(I, O, Requests, Requests') :-
 	I = parent(_Ok) : Requests!I, O = [];
 
 	I = trace(_Tree) : Requests!I, O = [];
+
+	I = _child(U, _), unknown(U) : I = O, Requests = Requests';
+
+	I = _behavior(U, _, _), unknown(U) : I = O, Requests = Requests';
 
 	otherwise : I = O, Requests = Requests'.
 
