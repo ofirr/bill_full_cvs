@@ -313,8 +313,8 @@ add_short_circuit(Mode, Program, NewProgram, PIds, TIds) :-
     Program ? procedure(Ident, Clauses) :
       NewProgram ! procedure(NewIdent, NewClauses),
       Value = Functor? / Arguments?,
-      PIds ! lookup(SecondPhaseFunctor?, Value, Value, Status) |
-/****/	add_lookup(Status?) = add_lookup(new), /** This should NOT fail. **/
+% PIds is only relevant for "protect"ed modules - not for monitors.
+      PIds ! lookup(SecondPhaseFunctor?, Value, Value, _Status) |
 	add_short_circuit,
 	new_ident(Ident,  Mode, NewIdent, Reply),
 	factor_ident(Ident, _Function, Functor, _Alias, Arguments),
