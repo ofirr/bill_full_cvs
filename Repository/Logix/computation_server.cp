@@ -5,9 +5,9 @@ Computation Server of Logix System
 Michael Hirsch and Bill Silverman
 
 Last update by		$Author: bill $
-		       	$Date: 1999/07/09 07:02:51 $
+		       	$Date: 2002/06/07 13:30:47 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.1.1.1 $
+			$Revision: 1.2 $
 			$Source: /spring/users1/Bill/Repository/Logix/computation_server.cp,v $
 
 Copyright (C) 1989, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -761,13 +761,6 @@ call_monitor_sub_channel(Requests, SuperControl, From, Event, SubOut,
 	call_monitor_recall(Goal, From, CompState, SubCCM, SubCCM'),
 	call_monitor,
 	True = true;
-
-    Event = clause(Goal, True, Controls),
-    listener(CompState) |
-	call_monitor_recall(Goal, From, CompState, SubCCM, SubCCM'),
-	call_monitor,
-	True = true,
-	clause_controls(Controls);
 
     Event = clause(Goal, true^, 0^, Time^),
     listener(CompState),
