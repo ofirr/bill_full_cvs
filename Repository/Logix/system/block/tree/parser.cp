@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/Logix/system/block/tree/parser.cp,v 1.1.1.1 1999/07/09 07:03:12 bill Exp $ */
+/* $Header: /net/spring/users1/Bill/Repository/Logix/system/block/tree/parser.cp,v 1.2 2002/05/29 08:04:03 bill Exp $ */
 /*
  *  Get and parse a module, rejecting library, monitor (except root-self),
  *  empty module and module with parsing-errors.
@@ -6,7 +6,7 @@
 
 -export([parse/6]).
 -language(compound).
--mode(trust).
+%-mode(trust).
 
 /******* PARSE ***************************************************************/
 
