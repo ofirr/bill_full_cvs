@@ -4,9 +4,9 @@ User Shell default macros
 Ehud Shapiro, 01-09-86
 
 Last update by		$Author: bill $
-		       	$Date: 2002/08/07 07:10:30 $
+		       	$Date: 2002/08/14 08:34:02 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.5 $
+			$Revision: 1.6 $
 			$Source: /net/spring/users1/Bill/Repository/SpiFcp/BioSpi/user_macros.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -79,6 +79,9 @@ expand(Command, Cs) :-
     Command = ph :
       CL = [	" a / a(No)          - abort computation No",
 		" at / at(Service)   - attributes(Service)",
+		" atr / atr(Ambient) - ambient tree",
+		" btr / atr(Ambient) - ambient tree with busy channels",
+		" atr / atr(Ambient) - ambient tree with communicating channels",
 		" i(File)            - input file",
 		" options(New, Old)  - default BioSpi Options",
 		" pc(C)              - make BioSpi channel C",
