@@ -4,9 +4,9 @@ User interface of algoritmic debugger.
 Yossi Lichtenstein, Peter Gerstenhaber
 
 Last update by          $Author: bill $
-			$Date: 2000/01/25 13:43:46 $
+			$Date: 2000/01/31 12:57:58 $
 Currently locked by     $Locker:  $
-			$Revision: 1.2 $
+			$Revision: 1.3 $
 			$Source: /spring/users1/Bill/Repository/PiFcp/pidbg/user.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL

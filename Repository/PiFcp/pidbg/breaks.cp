@@ -4,10 +4,10 @@ Break-point management of algorithmic debugger.
 Yossi Lichtenstein, Peter Gerstenhaber
 
 Last update by          $Author: bill $
-			$Date: 1999/07/09 07:03:22 $
+			$Date: 2000/04/16 08:44:35 $
 Currently locked by     $Locker:  $
-			$Revision: 1.1.1.1 $
-			$Source: /spring/users1/Bill/Repository/Logix/system/debug/breaks.cp,v $
+			$Revision: 2.0 $
+			$Source: /spring/users1/Bill/Repository/PiFcp/pidbg/breaks.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
 
