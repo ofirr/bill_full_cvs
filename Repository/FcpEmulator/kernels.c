@@ -1,11 +1,11 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v 1.2 2000/01/16 06:55:18 bill Exp $ */
 /*
 **	kernels.c  -  kernel predicates.
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 1999/07/01 07:15:09 $
+**		       	     $Date: 2000/01/16 06:55:18 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.1.1.1 $
+**			     $Revision: 1.2 $
 **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/kernels.c,v $
 */
 
@@ -29,6 +29,7 @@ extern	FILE *DbgFile, *OutFile;
 #include	<signal.h>
 #include	<sys/file.h>
 #include	<sys/time.h>
+#include	<time.h>
 
 #include	"fcp.h"
 #include	"codes.h"

@@ -1,11 +1,11 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/externs.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/externs.c,v 1.2 2000/02/15 12:19:25 bill Exp $ */
 /*
  **	extern.c  -  errors handling, and reporting procedures.
  **
  **	Last update by 	     $Author: bill $
- **		       	     $Date: 1999/07/01 07:15:09 $
+ **		       	     $Date: 2000/02/15 12:19:25 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.1.1.1 $
+ **			     $Revision: 1.2 $
  **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/externs.c,v $
  */
 
@@ -17,6 +17,7 @@ extern	FILE *DbgFile, *OutFile;
 #include	<errno.h>
 #include	<sys/file.h>
 #include	<sys/time.h>
+#include	<time.h>
 #include	<sys/resource.h>
 
 #include	"fcp.h"

@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/emulator/timer.c,v 1.1.1.1 1994/11/21 14:44:31 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/timer.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 /*
 **	timer.c - a device for generating time signals.
 **
@@ -38,6 +38,7 @@
 #include <string.h>
 #include <signal.h>
 #include <sys/time.h>
+#include <time.h>
 
 #include "fcp.h"
 #include "codes.h"

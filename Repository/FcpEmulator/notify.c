@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/notify.c,v 1.2 2000/01/16 06:55:20 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/notify.c,v 1.3 2000/02/15 12:19:26 bill Exp $ */
 
 #include	<stdio.h>
 extern	FILE *DbgFile, *OutFile;
@@ -8,6 +8,7 @@ extern	FILE *DbgFile, *OutFile;
 #include	<errno.h>
 #include	<sys/file.h>
 #include	<sys/time.h>
+#include	<time.h>
 #ifdef	SUNOS4d1d3
 #include	<sys/vadvise.h>
 #endif

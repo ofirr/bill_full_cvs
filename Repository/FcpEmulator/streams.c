@@ -1,12 +1,12 @@
-/* $Header: /baz/users/cvs-root/emulator/streams.c,v 1.2 1994/12/04 08:38:48 avshalom Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/streams.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 /*
  **	streams.c  -  produce and handle streams.
  **
- **	Last update by 	     $Author: avshalom $
- **		       	     $Date: 1994/12/04 08:38:48 $
+ **	Last update by 	     $Author: bill $
+ **		       	     $Date: 1999/07/01 07:15:10 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.2 $
- **			     $Source: /baz/users/cvs-root/emulator/streams.c,v $
+ **			     $Revision: 1.1.1.1 $
+ **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/streams.c,v $
  */
 
 #include	<stdio.h>
@@ -20,6 +20,7 @@ extern	FILE *DbgFile;
 #include	<errno.h>
 #include	<sys/file.h>
 #include	<sys/time.h>
+#include	<time.h>
 
 #include	"fcp.h"
 #include	"codes.h"

@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/heap.c,v 1.1.1.1 1999/07/01 07:15:09 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/heap.c,v 1.2 2000/02/15 12:19:26 bill Exp $ */
 /*
 **	heap.c  -  kernel predicates dealing with the entire heap
 **
@@ -10,9 +10,9 @@
 **	Avshalom Houri		21 Sivan 5745, 10 Jun 1985
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 1999/07/01 07:15:09 $
+**		       	     $Date: 2000/02/15 12:19:26 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.1.1.1 $
+**			     $Revision: 1.2 $
 **			     $Source: /spring/users1/Bill/Repository/FcpEmulator/heap.c,v $
 */
 
@@ -26,6 +26,7 @@ extern	FILE *DbgFile;
 #include	"macros.h"
 #include	<sys/file.h>
 #include	<sys/time.h>
+#include	<time.h>
 #include	<sys/resource.h>
 
 heapP LostProcesses;

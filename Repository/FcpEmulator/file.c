@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/file.c,v 1.2 1999/11/28 12:33:13 bill Exp $ */
+/* $Header: /spring/users1/Bill/Repository/FcpEmulator/file.c,v 1.3 2000/01/16 06:55:16 bill Exp $ */
 /*
 **	file.c - foreign kernals for handling files.
 **
@@ -15,6 +15,7 @@
 #include	<sys/types.h>
 #include	<sys/stat.h>
 #include	<sys/time.h>
+#include	<time.h>
 #include	<sys/file.h>
 #include	<stdio.h>
 #ifdef	SUNOS5d3
