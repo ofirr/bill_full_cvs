@@ -14,8 +14,7 @@ Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 */
 -language([evaluate, compound, colon]).
 -export(transform/5).
--mode(interpret).
-%-mode(trust).
+-mode(trust).
 
 -include(spi_constants).
 -include(bio_constants).
