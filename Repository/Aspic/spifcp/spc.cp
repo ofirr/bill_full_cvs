@@ -593,8 +593,8 @@ dimerize_requests(Tell, NewTell) :-
 	request(dimer, ChannelName, Multiplier, {SendTag, ReceiveTag}),
       Retell = [NewRequest | Tell'?] ;
 
-    Tell ? request(receive, ChannelName, Multiplier, SendTag),
-    Request =?= request(send, ChannelName, Multiplier, ReceiveTag) :
+    Tell ? request(receive, ChannelName, Multiplier, ReceiveTag),
+    Request =?= request(send, ChannelName, Multiplier, SendTag) :
       NewRequest =
 	request(dimer, ChannelName, Multiplier, {SendTag, ReceiveTag}),
       Retell = [NewRequest | Tell'?] ;
