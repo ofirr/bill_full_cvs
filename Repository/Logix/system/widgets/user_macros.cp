@@ -4,10 +4,10 @@ User Shell default macros
 Ehud Shapiro, 01-09-86
 
 Last update by		$Author: bill $
-		       	$Date: 1994/03/24 11:11:41 $
+		       	$Date: 1999/07/09 07:03:23 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.2 $
-			$Source: /baz/users/cvs-root/Source/system/widgets/user_macros.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /spring/users1/Bill/Repository/Logix/system/widgets/user_macros.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -165,9 +165,6 @@ expand(Command, Cs) :-
       Cs = [suspend|Commands]\Commands ;
     Command = s(Computation) :
       Cs = [suspend(Computation)|Commands]\Commands ;
-
-    Command = t :
-      Cs = [trace|Commands]\Commands ;
 
     Command = vi |
 	edit(vi, _Module, Cs);
