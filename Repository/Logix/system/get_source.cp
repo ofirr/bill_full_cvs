@@ -5,10 +5,10 @@ Source preprocessor
 William Silverman
 
 Last update by		$Author: bill $
-		       	$Date: 1994/05/17 05:54:29 $
+		       	$Date: 1999/07/09 07:02:56 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.2 $
-			$Source: /baz/users/cvs-root/Source/system/get_source.cp,v $
+			$Revision: 1.1.1.1 $
+			$Source: /home/bill/Repository/Logix/system/get_source.cp,v $
 
 Copyright (C) 1988, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -270,7 +270,10 @@ module_kind(Abort, Terms1, Kind, Terms2) :-
       Kind = library,
       Terms1' = Terms2 ;
 
-    Terms1 = [First | _], First =\= library : Abort = _,
+/* Add other Kind detection here. */
+
+    otherwise :
+      Abort = _,
       Kind = module,
       Terms1 = Terms2 ;
 
