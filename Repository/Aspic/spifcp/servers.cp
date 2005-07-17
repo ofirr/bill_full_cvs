@@ -4,10 +4,10 @@ Precompiler for Stochastic Pi Calculus procedures - servers.
 Bill Silverman, December 1999.
 
 Last update by		$Author: bill $
-		       	$Date: 2003/08/05 10:58:11 $
+		       	$Date: 2004/12/24 15:41:24 $
 Currently locked by 	$Locker:  $
-			$Revision: 1.5 $
-			$Source: /home/bill/Repository/SpiFcp/spifcp/servers.cp,v $
+			$Revision: 1.6 $
+			$Source: /home/bill/Repository/Aspic/spifcp/servers.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -1136,11 +1136,6 @@ message_to_channels(Message, Name, ChannelNames, Locals,
       MsChannelNames ! OkChannelName? |
 	utilities#verify_channel(Name, Channel, ChannelNames, Locals,
 				OkChannelName, Errors, Errors'),
-	self;
-
-    arg(Index, Message, _),
-    Index++ :
-      MsChannelNames ! "_" |
 	self;
 
     Index > arity(Message) :
