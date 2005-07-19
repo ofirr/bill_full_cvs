@@ -1,3 +1,18 @@
+/*
+
+User Ambient trace (obsolescent)
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker: $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2005, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -mode(failsafe).
 -language([evaluate,compound,colon]).
 -export([run/2, run/3, indent/2]).

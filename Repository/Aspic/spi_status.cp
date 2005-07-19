@@ -1,3 +1,17 @@
+/*
+
+SpiFcp Return monitor status
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2004, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
 -language(compound).
 -mode(interrupt).
 -export([now/1, cutoff/1, debug/1, ordinal/1, record/1, get_status/2,

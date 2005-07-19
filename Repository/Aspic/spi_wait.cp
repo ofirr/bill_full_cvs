@@ -1,3 +1,18 @@
+/*
+
+SpiFcp wait for internal time exceeded
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2004, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -language(compound).
 -mode(interrupt).
 -export(until/2).

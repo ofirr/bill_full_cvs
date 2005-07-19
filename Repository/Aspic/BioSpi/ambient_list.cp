@@ -1,3 +1,18 @@
+/*
+
+User Ambient list (replaces ambient_trace.cp)
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker: $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2005, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -language([evaluate,compound,colon]).
 -mode(trust).
 -export([run/2, run/3, run/4]).

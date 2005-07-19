@@ -1,3 +1,18 @@
+/*
+
+SpiFcp Channel activity monitor
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 1998, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -monitor(initialize).
 -language([evaluate,compound,colon]).
 -export([get_public_channels/1, public_channels/1, public_channels/2,

@@ -1,3 +1,18 @@
+/*
+Precompiler for Stochastic Pi Calculus procedures - transformation optimizer.
+
+Bill Silverman, December 2002.
+
+Last update by          $Author: bill $
+                        $Date: 2004/05/31 07:01:52 $
+Currently locked by     $Locker:  $
+                        $Revision: 1.7 $
+                        $Source: /home/bill/Repository/Aspic/spifcp/call.cp,v $
+
+Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -export([initialize/3, procedures/4]).
 -language([evaluate, compound, colon]).
 %-mode(failsafe).

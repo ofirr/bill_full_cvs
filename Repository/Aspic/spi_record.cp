@@ -1,3 +1,17 @@
+/*
+
+SpiFcp Record channel activity from monitor record output
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
 -language([evaluate,compound,colon]).
 -mode(trust).
 -export([run/2, run/3, run/4, run/5

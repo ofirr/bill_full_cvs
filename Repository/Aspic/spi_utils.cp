@@ -1,3 +1,18 @@
+/*
+
+SpiFcp utility processes
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 1998, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -language([evaluate,compound,colon]).
 -mode(trust).
 -export([make_channel/1, make_channel/2, make_channel/3, make_channel/4,

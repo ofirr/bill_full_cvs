@@ -1,3 +1,18 @@
+/*
+
+SpiFcp Transformation macros
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2002, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -language(compound).
 -export([transform/2, transform_and_wait/3,
 	 spi2cmp/3, spi2fcp/3]).

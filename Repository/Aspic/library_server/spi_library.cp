@@ -1,3 +1,18 @@
+/*
+
+Spifcp Library processes
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker: $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 1998, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -export([string/1]).
 -mode(trust).
 -language(compound).

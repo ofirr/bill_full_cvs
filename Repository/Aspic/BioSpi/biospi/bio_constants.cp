@@ -1,3 +1,18 @@
+/*
+Precompiler for Stochastic Pi Calculus procedures - symbol definitions.
+
+Bill Silverman, December 2001.
+
+Last update by          $Author: bill $
+                        $Date: 2004/05/31 07:01:52 $
+Currently locked by     $Locker:  $
+                        $Revision: 1.7 $
+                        $Source: /home/bill/Repository/Aspic/spifcp/call.cp,v $
+
+Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 /* Characters */
 
 COMMUNICATION_SUFFIX => 39. % Prime

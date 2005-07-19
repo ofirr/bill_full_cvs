@@ -1,3 +1,18 @@
+/*
+
+User Ambient server
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker: $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2001, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -mode(trust).
 -language([evaluate,compound,colon]).
 -include(spi_constants).

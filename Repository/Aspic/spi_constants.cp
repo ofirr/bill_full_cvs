@@ -1,3 +1,18 @@
+/*
+
+SpiFcp Constant definitions
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 /* Strings */
 
 EMPTY => "".

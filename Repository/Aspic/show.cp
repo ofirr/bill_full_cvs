@@ -1,3 +1,18 @@
+/*
+
+SpiFcp Show channel statuses
+William Silverman
+
+Last update by          $Author: $
+                        $Date: $
+Currently locked by     $Locker:  $
+                        $Revision: $
+                        $Source: $
+
+Copyright (C) 2000, Weizmann Institute of Science - Rehovot, ISRAEL
+
+*/
+
 -language([evaluate,compound,colon]).
 -mode(interrupt).
 -export([based/0, channels/0, channels/1, instantaneous/0, stuff/2]).

@@ -1,15 +1,15 @@
 /*
 
-User Shell default macros
-Ehud Shapiro, 01-09-86
+User Ambient macros
+William Silverman
 
-Last update by		$Author: bill $
-		       	$Date: 2005/05/07 14:55:08 $
-Currently locked by 	$Locker:  $
-			$Revision: 1.21 $
-			$Source: /home/bill/Repository/Aspic/BioSpi/user_macros.cp,v $
+Last update by		$Author: $
+		       	$Date: $
+Currently locked by 	$Locker: $
+			$Revision: $
+			$Source: $
 
-Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
+Copyright (C) 1998, Weizmann Institute of Science - Rehovot, ISRAEL
 
 */
 
