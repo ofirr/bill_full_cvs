@@ -1,4 +1,4 @@
-/* $Header: /home/bill/Repository/FcpEmulator/fcp.c,v 1.4 2003/12/22 09:09:50 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/fcp.c,v 1.6 2004/10/21 15:56:12 bill Exp $ */
 /*
 **  fcp.c  -  emulator startup
 */
@@ -55,7 +55,7 @@ fcp(argc, argv)
   char *Base;
   int Size, Reply;
 
-  extern char *malloc();
+  extern char *malloc(size_t);
 #ifdef	LINUX
   extern int posix_memalign(void **, int, int);
 #else
