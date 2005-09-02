@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/file.c,v 1.3 2000/01/16 06:55:16 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/file.c,v 1.4 2001/11/29 11:19:58 bill Exp $ */
 /*
 **	file.c - foreign kernals for handling files.
 **
@@ -22,14 +22,10 @@
 #include	<sys/fcntl.h>
 #endif
 #include	<errno.h>
-#ifndef	SUNOS5d3
 #include	<strings.h>
-#else
-#include	<string.h>
-#endif
 #include	<stdlib.h>
 
-#ifndef LINUX
+#if !(defined(LINUX) || defined(MACOSX))
 extern char *sys_errlist[];
 #endif
 
@@ -465,7 +461,7 @@ static getworkingdirectory(A)
     if (ended_heap(((heapP) (Pchars + MAXPATHLEN)))) {
       return(False);
     }
-    if (getcwd(Pchars, MAXPATHLEN) == NULL) {
+    if ((char *)getcwd(Pchars, MAXPATHLEN) == NULL) {
       return(False);
     }
   }

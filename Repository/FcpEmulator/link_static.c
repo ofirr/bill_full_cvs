@@ -1,6 +1,7 @@
-/* $Header: /baz/users/cvs-root/emulator/link_static.c,v 1.2 1994/12/04 08:38:43 avshalom Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/link_static.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 
 #include	<stdio.h>
+#include	<string.h>
 #include	"fcp.h"
 
 /* Made by mkmk */

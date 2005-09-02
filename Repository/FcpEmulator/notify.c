@@ -1,4 +1,4 @@
-/* $Header: /spring/users1/Bill/Repository/FcpEmulator/notify.c,v 1.3 2000/02/15 12:19:26 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/notify.c,v 1.4 2001/11/29 11:19:59 bill Exp $ */
 
 #include	<stdio.h>
 extern	FILE *DbgFile, *OutFile;
@@ -18,6 +18,8 @@ extern	FILE *DbgFile, *OutFile;
 #include	"codes.h"
 #include	"global.h"
 #include	"macros.h"
+
+extern void exit(int);
 
 /* Init */
 
@@ -809,6 +811,7 @@ set_signals_masks()
 
 #endif
 
+#ifndef MACOSX
 #ifdef	SUNOS5d3
 
 set_signals_masks()
@@ -865,6 +868,7 @@ set_signals_masks()
 }
 
 #endif
+#endif
 
 #ifdef	HPUX
 
@@ -914,7 +918,7 @@ set_signals_masks()
 
 #endif
 
-#ifdef	LINUX
+#if (defined MACOSX) || (defined LINUX)
 
 set_signals_masks()
 {

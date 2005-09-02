@@ -1,11 +1,11 @@
-/* $Header: /home/bill/Repository/FcpEmulator/kernels.c,v 1.3 2001/11/29 11:19:58 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/kernels.c,v 1.4 2004/09/03 11:49:11 bill Exp $ */
 /*
 **	kernels.c  -  kernel predicates.
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 2001/11/29 11:19:58 $
+**		       	     $Date: 2004/09/03 11:49:11 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.3 $
+**			     $Revision: 1.4 $
 **			     $Source: /home/bill/Repository/FcpEmulator/kernels.c,v $
 */
 
@@ -725,7 +725,9 @@ do_exceptions()
 	  }
 	  else {
 #ifndef LINUX
+#ifndef MACOSX
 	    extern char *sys_siglist[];
+#endif
 #endif
 
 	    PStr = produce_string("sys_siglist[((int) *ERRP)]");

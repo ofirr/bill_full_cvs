@@ -1,6 +1,7 @@
-/* $Header: /baz/users/cvs-root/emulator/utility.c,v 1.1.1.1 1994/11/21 14:44:31 fcp Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/utility.c,v 1.1.1.1 1999/07/01 07:15:10 bill Exp $ */
 
 #include	<stdio.h>
+#include	<string.h>
 
 #include	"fcp.h"
 #include	"codes.h"
