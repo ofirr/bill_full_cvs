@@ -1,10 +1,11 @@
 #!/bin/sh
+#echo
 #./auto_homes -ecymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
 #./auto_homes -scymbal,harp,horn,lachesis,bina,wisdom /home/www/mhomepages
 # Exclude math01-rd to avoid logging in users. 
 ##ypcat auto.home | /bin/nawk '{print $NF}' > /home/www/Webout/auto.home
 ##ypcat -k auto.home | /bin/nawk '{print $1" "$NF}' > /home/www/Webout/auto.homek
-/home/www/Webout/auto_homes -emath01-rd,narkis /home/www/Webout/mhomepages
+/home/www/Webout/auto_homes -esedna,narkis /home/www/Webout/mhomepages
 # Users from math01-rd are executed locally on nufar.
-/home/www/Webout/auto_homes -smath01-rd,narkis /home/www/Webout/mhomepages
+/home/www/Webout/auto_homes -ssedna,narkis /home/www/Webout/mhomepages
 ##/bin/rm /home/www/Webout/auto.home /home/www/Webout/auto.homek
