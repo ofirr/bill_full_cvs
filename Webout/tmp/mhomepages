@@ -56,7 +56,7 @@ foreach $auto (@Auto) {
     split(/:/, $rest);
   my $homedir = ($only || $client) ? "/home/$uid" : "$sdir/$udir";
   if (($only eq $uid || (!$only && $home eq $name))
-       && -r "$homedir/public_html/index.html") {
+       && ((-r "$homedir/public_html/index.html") || ( -r "$homedir/public_html/index.php"))) {
     my $pubdir = "$homedir/public_html";
     if (-l $pubdir && (!$only || $only eq $uid)) {
       my $redir = readlink($pubdir);
