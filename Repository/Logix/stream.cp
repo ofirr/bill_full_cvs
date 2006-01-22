@@ -5,11 +5,11 @@ Stream server
  Ehud Shapiro, Muli Safra, and Jim Crammond, 01-04-85
  Added distributor, Ehud Shapiro, 15-09-85
 
-Last update by		$Author: fcp $
-		       	$Date: 1993/12/31 10:41:21 $
+Last update by		$Author: bill $
+		       	$Date: 1999/07/09 07:02:50 $
 Currently locked by 	$Locker:  $
 			$Revision: 1.1.1.1 $
-			$Source: /baz/users/cvs-root/Source/stream.cp,v $
+			$Source: /spring/users1/Bill/Repository/Logix/stream.cp,v $
 
 Copyright (C) 1985, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -252,6 +252,10 @@ key_index(Key, N, Index) :-
     Key < 1,
     Index^ := integer(1-Key) \ N + 1 |
 	true;
+
+    real(Key),
+    convert_to_string(Key, Key') |
+	self;
 
     Key = S(I), I < 1,
     Index^ := (string_hash(S) + integer(1-I)) \ N + 1 |
