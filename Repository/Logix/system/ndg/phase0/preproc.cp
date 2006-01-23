@@ -1,4 +1,4 @@
-/* $Header: /baz/users/cvs-root/Source/system/ndg/phase0/preproc.cp,v 1.1.1.1 1993/12/31 10:42:14 fcp Exp $ */
+/* $Header: /spring/users1/Bill/Repository/Logix/system/ndg/phase0/preproc.cp,v 1.1.1.1 1999/07/09 07:03:06 bill Exp $ */
 -export([preproc/2]).
 -language(compound).
 -mode(trust).
@@ -37,10 +37,11 @@ change_representation(Clss,ClssOut) :-
 
     Clss ? {H,{A,T},B} :
       ClssOut ! {H1,{A1,T1},B1} |
+	substitute#replace_reals(A, T, B, A0, T0, B0),
 	change_goal(H,H1),
-	change_list(A,A1),
-	change_list(T,T1),
-	change_list(B,B1),
+	change_list(A0,A1),
+	change_list(T0,T1),
+	change_list(B0,B1),
 %	screen#display(preproc(A1,A11,A2,Replaces),type(ground)),
 	self;
 
