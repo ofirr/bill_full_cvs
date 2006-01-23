@@ -4,9 +4,9 @@ SpiFcp Trace channel activity from monitor debug output
 William Silverman
 
 Last update by          $Author: bill $
-                        $Date: 2005/09/27 07:48:52 $
+                        $Date: 2005/10/27 17:09:18 $
 Currently locked by     $Locker:  $
-                        $Revision: 1.4 $
+                        $Revision: 1.5 $
                         $Source: /home/bill/Repository/Aspic/spi_trace.cp,v $
 
 Copyright (C) 2000, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -76,7 +76,7 @@ runit(Goal, File, Limit, Scale, Format) :-
     string(File), File =\= "",
     Limit >= 0,
     convert_to_real(Scale, Scale'),
-    0 < Scale' |
+    0.0 < Scale' |
 	spi_monitor#scheduler(Scheduler),
 	write_channel(debug(Stream), Scheduler, Scheduler'),
 	write_channel(cutoff(Limit, _State), Scheduler'),

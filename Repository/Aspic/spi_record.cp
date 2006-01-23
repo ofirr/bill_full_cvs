@@ -4,9 +4,9 @@ SpiFcp Record channel activity from monitor record output
 William Silverman
 
 Last update by          $Author: bill $
-                        $Date: 2005/09/27 07:48:52 $
+                        $Date: 2005/10/27 17:08:31 $
 Currently locked by     $Locker:  $
-                        $Revision: 1.11 $
+                        $Revision: 1.12 $
                         $Source: /home/bill/Repository/Aspic/spi_record.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -73,9 +73,9 @@ runit(Goal, File, Limit, Scale, Format) :-
     Goal =?= _#_,
     string(File), File =\= "",
     convert_to_real(Limit, Limit'),
-    0 =< Limit',
+    0.0 =< Limit',
     convert_to_real(Scale, Scale'),
-    0 < Scale' |
+    0.0 < Scale' |
 	spi_monitor#scheduler(Scheduler),
 	write_channel(record(Stream), Scheduler, Scheduler'),
 	write_channel(cutoff(Limit', _State), Scheduler'),
