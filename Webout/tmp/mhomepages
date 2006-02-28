@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl -U
 
 # Create a package file for mirror and mirror home pages of users.
 # Call: homepage [client | user]
@@ -10,19 +10,24 @@ my $TargetDir = "/math";
 my $Rmirror = "/home/www/mirror-2.9/mirror";
 
 my $client = "";
+my %Proxied = ();
 
 # Initialization and argument handling
 
 my $defaults = "/home/www/Webout/homepage_defaults";
-#my $defaults = "/etc/local/homepage_defaults";
 my $distfile = "$TmpDir/mirror-" . getppid();
 `/usr/bin/rm -f $distfile`;
 open(DISTFILE, ">$distfile") or die "Can't open $distfile";
+
 open(DEFAULTS, "$defaults") or die "Can't open $defaults";
 while (<DEFAULTS>) {
   print DISTFILE $_;
 }
 close DEFAULTS;
+
+my $auto;
+
+my @Auto = `cat /home/www/Webout/auto.homej`;
 
 my $argument = shift;
 
@@ -32,32 +37,46 @@ if ($only) {
 }
 else {
   $client = $argument;
+  if (!$only) {
+      foreach $auto (@Auto) {
+	  my ($uid, $rest) =
+	      split(/\s/, $auto);
+	  my ($home, $sdir, $udir, $proxy) =
+	      split(/:/, $rest);
+	  if ($proxy) {
+	      $Proxied{$home} = $proxy;
+	  }
+      }
+  }
 }
 
-my $sysname = ($client ? "rsh $client " : "") . "uname -ns";
+my $sysname = (($client and not $Proxied{$client}) ?
+    "rsh $client " : "") . "uname -ns";
 my ($system, $name) =
   split(/\s/, `$sysname`);
 $name =~ s/^(.*)\.wisdom\.weizmann\.ac\.il$/$1/;
-if ($client) {
-  $system = `uname -s`;
-  chomp $system;
-}
-
-#my @Auto = `ypcat -k auto.home`;
-my @Auto = `cat /home/www/Webout/auto.homek`;
 
 # Main loop
 
-my $auto;
 foreach $auto (@Auto) {
   my ($uid, $rest) =
     split(/\s/, $auto);
-  my ($home, $sdir, $udir) =
+  my ($home, $sdir, $udir, $proxy) =
     split(/:/, $rest);
-  my $homedir = ($only || $client) ? "/home/$uid" : "$sdir/$udir";
-  if (($only eq $uid || (!$only && $home eq $name))
-       && ((-r "$homedir/public_html/index.html") || ( -r "$homedir/public_html/index.php"))) {
-    my $pubdir = "$homedir/public_html";
+  my $homedir = ($only || $client || $proxy) && ($home ne $name) ?
+      					       "/home/$uid" : "$sdir/$udir";
+  my $pubdir = "$homedir/public_html";
+
+  if ($client && ($client ne $home)) {
+      next
+  }
+  if (not((-r "$homedir/public_html/index.html") ||
+	  (-r "$homedir/public_html/index.php"))) {
+      open(PUBINX, "$pubdir/index.html") or
+	 (open(PUBINX, "$pubdir/index.php") or next);
+      close(PUBINX);
+  }
+  if ($only eq $uid || (!$only && ($proxy || $home eq $name))) {
     if (-l $pubdir && (!$only || $only eq $uid)) {
       my $redir = readlink($pubdir);
       if ($redir) {
