@@ -34,9 +34,7 @@ my @keys = keys(%Exclude);
 
 my $rsh = $command ? "rsh" : "echo";
 
-#my @auto = `ypcat auto.home`;
-#my @auto = `ypcat  auto.home |  /bin/nawk '{print $NF}'`;
-my @auto = `cat /home/www/Webout/auto.homek`;
+my @auto = `cat /home/www/Webout/auto.home`;
 
 # Main loop
 
