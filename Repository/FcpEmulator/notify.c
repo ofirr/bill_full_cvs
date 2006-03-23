@@ -1,4 +1,4 @@
-/* $Header: /home/bill/Repository/FcpEmulator/notify.c,v 1.4 2001/11/29 11:19:59 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/notify.c,v 1.5 2005/09/02 04:54:01 bill Exp $ */
 
 #include	<stdio.h>
 extern	FILE *DbgFile, *OutFile;
@@ -918,7 +918,7 @@ set_signals_masks()
 
 #endif
 
-#if (defined MACOSX) || (defined LINUX)
+#if (defined MACOSX) || (defined LINUX) || (defined CYGWIN)
 
 set_signals_masks()
 {

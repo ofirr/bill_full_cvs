@@ -1,11 +1,11 @@
-/* $Header: /home/bill/Repository/FcpEmulator/externs.c,v 1.6 2003/12/22 09:12:07 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/externs.c,v 1.7 2004/10/21 15:50:49 bill Exp $ */
 /*
  **	extern.c  -  errors handling, and reporting procedures.
  **
  **	Last update by 	     $Author: bill $
- **		       	     $Date: 2003/12/22 09:12:07 $
+ **		       	     $Date: 2004/10/21 15:50:49 $
  **	Currently locked by  $Locker:  $
- **			     $Revision: 1.6 $
+ **			     $Revision: 1.7 $
  **			     $Source: /home/bill/Repository/FcpEmulator/externs.c,v $
  */
 
@@ -77,10 +77,14 @@ int Type, Value;
     }
     break;
   case SIGNAL:
+#ifndef CYGWIN
     if (DbgFile != stderr) {
+#endif
       fprintf(DbgFile, "%s: Signal No. = %d\n", (Constants[Type]+2), Value);
+#ifndef CYGWIN
     }
     psignal(Value, (char *) (Constants[Type]+2));
+#endif
     break;
   case SYSTEM:
     if (DbgFile != stderr) {

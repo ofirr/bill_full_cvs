@@ -1,13 +1,13 @@
-/* $Header: /home/bill/Repository/FcpEmulator/interface.c,v 1.7 2003/12/22 09:15:23 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/interface.c,v 1.8 2005/09/02 04:54:00 bill Exp $ */
 /*
 **	interface.c - unix interface functions.
 **
 **	Michael Hirsch and Bill Silverman		February 1986
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 2003/12/22 09:15:23 $
+**		       	     $Date: 2005/09/02 04:54:00 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.7 $
+**			     $Revision: 1.8 $
 **			     $Source: /home/bill/Repository/FcpEmulator/interface.c,v $
 **
 */
@@ -205,7 +205,7 @@ interface(T)
 #else
 	extern int sys_err;
 #endif
-#if !(defined(LINUX) || defined(MACOSX))
+#if !(defined(LINUX) || defined(MACOSX) || defined(CYGWIN))
 	extern char *sys_errlist[];
 #endif
 

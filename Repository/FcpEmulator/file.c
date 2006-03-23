@@ -1,4 +1,4 @@
-/* $Header: /home/bill/Repository/FcpEmulator/file.c,v 1.4 2001/11/29 11:19:58 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/file.c,v 1.5 2005/09/02 04:53:59 bill Exp $ */
 /*
 **	file.c - foreign kernals for handling files.
 **
@@ -25,7 +25,7 @@
 #include	<strings.h>
 #include	<stdlib.h>
 
-#if !(defined(LINUX) || defined(MACOSX))
+#if !(defined(LINUX) || defined(MACOSX) || defined(CYGWIN))
 extern char *sys_errlist[];
 #endif
 
