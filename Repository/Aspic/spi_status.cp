@@ -4,9 +4,9 @@ SpiFcp Return monitor status
 William Silverman
 
 Last update by          $Author: bill $
-                        $Date: 2005/07/19 14:46:51 $
+                        $Date: 2005/10/27 17:05:11 $
 Currently locked by     $Locker:  $
-                        $Revision: 1.2 $
+                        $Revision: 1.3 $
                         $Source: /home/bill/Repository/Aspic/spi_status.cp,v $
 
 Copyright (C) 2004, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -42,7 +42,8 @@ record(Stream?^) :- get_status(record, Stream).
 
 /* Return the named status value. */
 get_status(Name, Value?^) :-
-	spi_monitor#status(Status), extract(Status, Name, Value).
+	computation # spi_monitor #
+			status(Status), extract(Status, Name, Value).
 
 extract(Status, Name, Value):-
 

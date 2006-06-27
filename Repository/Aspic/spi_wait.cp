@@ -3,11 +3,11 @@
 SpiFcp wait for internal time exceeded
 William Silverman
 
-Last update by          $Author: $
-                        $Date: $
+Last update by          $Author: bill $
+                        $Date: 2005/07/19 14:46:52 $
 Currently locked by     $Locker:  $
-                        $Revision: $
-                        $Source: $
+                        $Revision: 1.2 $
+                        $Source: /home/bill/Repository/Aspic/spi_wait.cp,v $
 
 Copyright (C) 2004, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -30,7 +30,7 @@ Copyright (C) 2004, Weizmann Institute of Science - Rehovot, ISRAEL
 */
 
 until(Then, Reply) :-
-	spi_status#debug(S),
+	computation # spi_status # debug(S),
 	wait_until.
 
   wait_until(S, Then, Reply) :-
