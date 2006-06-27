@@ -3,11 +3,11 @@
 SpiFcp Show channel statuses
 William Silverman
 
-Last update by          $Author: $
-                        $Date: $
+Last update by          $Author: bill $
+                        $Date: 2005/07/19 14:46:48 $
 Currently locked by     $Locker:  $
-                        $Revision: $
-                        $Source: $
+                        $Revision: 1.5 $
+                        $Source: /home/bill/Repository/Aspic/show.cp,v $
 
 Copyright (C) 2000, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -25,7 +25,7 @@ instantaneous :-
 	channels(instantaneous).
 
 channels + (Type = all) :-
-	spi_monitor#status(Status),
+	computation # spi_monitor # status(Status),
 	extract_anchors,
 	show_queues(Anchors, CHs, []),
 	screen#display_stream(CHs?).
