@@ -3,11 +3,11 @@
 Spifcp Library processes
 William Silverman
 
-Last update by          $Author: $
-                        $Date: $
-Currently locked by     $Locker: $
-                        $Revision: $
-                        $Source: $
+Last update by          $Author: bill $
+                        $Date: 2005/07/19 14:47:16 $
+Currently locked by     $Locker:  $
+                        $Revision: 1.7 $
+                        $Source: /home/bill/Repository/Aspic/library_server/spi_library.cp,v $
 
 Copyright (C) 1998, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -318,6 +318,21 @@ get_channel_status(Channel, Attribute, Value) :-
       Anchor = _,
       Request = _,
       Count = Counter.
+
+object(Name, InitialValue, Object) :-
+    string(Name) |
+	spi_monitor#public_object(Name, InitialValue, Object).
+
+/****************************************************************************/
+
+spi_object_request(Object, Request) :-
+
+    vector(Object),
+    arity(Object, OBJECT_ARITY) :
+      write_vector(OBJECT_REQUESTS, Request, Object);
+
+    otherwise |
+	computation#display('Can''t send'(Object!Request)).
 "
 
 	| true.
