@@ -3,11 +3,11 @@
 SpiFcp Constant definitions
 William Silverman
 
-Last update by          $Author: $
-                        $Date: $
+Last update by          $Author: bill $
+                        $Date: 2005/07/19 14:46:49 $
 Currently locked by     $Locker:  $
-                        $Revision: $
-                        $Source: $
+                        $Revision: 1.12 $
+                        $Source: /home/bill/Repository/Aspic/spi_constants.cp,v $
 
 Copyright (C) 1999, Weizmann Institute of Science - Rehovot, ISRAEL
 
@@ -152,6 +152,14 @@ SPI_OP_VALUE =>        3.
 SPI_OP_CHOSEN =>       4.
 
 SPI_COMMON_SIZE =>     4.
+
+/* Object Definitions */
+
+OBJECT_ARITY => 2.
+OBJECT_VALUES => 1.
+OBJECT_REQUESTS => 2.
+TIME_OBJECT_NAME => "SPITIME".
+TIME_INITIAL_VALUE => 0.0.
 
 /* Clause Tests */
 
