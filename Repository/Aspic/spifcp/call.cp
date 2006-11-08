@@ -484,7 +484,9 @@ make_local_call(ProcessDefinition, Locals, Primes, Body1, Body2,
       MacroCall = error("result must be a variable"(ObjectName!Request)).
 
   complete_object_request(ObjectName, Request, MacroCall) :-
-    true: MacroCall = spi_object_request(?ObjectName, Request).
+    string_to_dlist(ObjectName, ON, [CHAR_PRIME]),
+    list_to_string(ON, PrimedObjectName) :
+      MacroCall = spi_object_request(Request, ?ObjectName, `PrimedObjectName).
 
   call_object_macro(ProcessName, MacroCall,
 	Body2, In, NextIn, Errors, NextErrors) :-
