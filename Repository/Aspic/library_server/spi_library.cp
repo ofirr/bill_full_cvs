@@ -325,6 +325,7 @@ object(Name, InitialValue, Object) :-
 
 /****************************************************************************/
 
+/***************** Obsolescent ****************/
 spi_object_request(Object, Request) :-
 
     vector(Object),
@@ -332,6 +333,17 @@ spi_object_request(Object, Request) :-
       write_vector(OBJECT_REQUESTS, Request, Object);
 
     otherwise |
+	computation#display('Can''t send'(Object!Request)).
+/***************** Obsolescent ****************/
+
+spi_object_request(Request, Object, PrimedObject) :-
+
+    vector(Object),
+    arity(Object, OBJECT_ARITY) :
+      write_vector(OBJECT_REQUESTS, Request, Object, PrimedObject);
+
+    otherwise :
+      PrimedObject = _ |
 	computation#display('Can''t send'(Object!Request)).
 "
 
