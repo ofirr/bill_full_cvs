@@ -1,4 +1,4 @@
-/* $Header: /home/bill/Repository/FcpEmulator/fcp.c,v 1.6 2004/10/21 15:56:12 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/fcp.c,v 1.8 2005/09/02 04:53:59 bill Exp $ */
 /*
 **  fcp.c  -  emulator startup
 */
@@ -57,7 +57,7 @@ fcp(argc, argv)
   char *Base;
   int Size, Reply;
 
-#if (defined LINUX) || (defined MACOSX)
+#if (defined LINUX) || (defined MACINTOSH)
   extern int posix_memalign(void **, int, int);
 #else
   extern void *memalign();
@@ -117,7 +117,7 @@ fcp(argc, argv)
   if (BootType != WarmBoot) {
     Size = RsrvSize+LinkSize+HeapSize;
 
-#if (defined LINUX) || (defined MACOSX)
+#if (defined LINUX) || (defined MACINTOSH)
     Reply = posix_memalign((void **)&PMem, HOPage, HOPage);
     if (Reply != 0) {
       Reply = posix_memalign((void **)&PMem, HOPage, Size);
@@ -272,7 +272,7 @@ fcp(argc, argv)
     }
 
     Size = RsrvSize+LinkSize+HeapSize;
-#if (defined LINUX) || (defined MACOSX)
+#if (defined LINUX) || (defined MACINTOSH)
     Reply = posix_memalign((void **)&PMem, HOPage, HOPage);
     if (Reply != 0) {
       Reply = posix_memalign((void **)&PMem, HOPage, Size);
@@ -672,7 +672,7 @@ init_stats()
 void display_memory(char *Title)
 {
   fprintf(DbgFile, "\n** %s - %smemalign **\n", Title,
-#if (defined LINUX) || (defined MACOSX)
+#if (defined LINUX) || (defined MACINTOSH)
 	  "posix_"
 #else
 	  ""
@@ -697,7 +697,7 @@ void display_memory(char *Title)
   }
 }
 
-#if defined(MACOSX)
+#if defined(MACINTOSH)
 int posix_memalign(void **memptr, int alignment, int size)
 {
   char *lowptr;

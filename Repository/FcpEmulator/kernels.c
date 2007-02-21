@@ -1,11 +1,11 @@
-/* $Header: /home/bill/Repository/FcpEmulator/kernels.c,v 1.4 2004/09/03 11:49:11 bill Exp $ */
+/* $Header: /home/bill/Repository/FcpEmulator/kernels.c,v 1.5 2005/09/02 04:54:00 bill Exp $ */
 /*
 **	kernels.c  -  kernel predicates.
 **
 **	Last update by:	     $Author: bill $
-**		       	     $Date: 2004/09/03 11:49:11 $
+**		       	     $Date: 2005/09/02 04:54:00 $
 **	Currently locked by: $Locker:  $
-**			     $Revision: 1.4 $
+**			     $Revision: 1.5 $
 **			     $Source: /home/bill/Repository/FcpEmulator/kernels.c,v $
 */
 
@@ -725,7 +725,7 @@ do_exceptions()
 	  }
 	  else {
 #ifndef LINUX
-#ifndef MACOSX
+#ifndef MACINTOSH
 	    extern char *sys_siglist[];
 #endif
 #endif
