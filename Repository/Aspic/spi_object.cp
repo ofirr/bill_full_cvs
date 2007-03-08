@@ -4,9 +4,9 @@ SpiFcp Object Monitor
 William Silverman
 
 Last update by          $Author: bill $
-                        $Date: 2006/06/27 08:47:01 $
+                        $Date: 2006/08/05 05:48:27 $
 Currently locked by     $Locker:  $
-                        $Revision: 1.1 $
+                        $Revision: 1.2 $
                         $Source: /home/bill/Repository/Aspic/spi_object.cp,v $
 
 Copyright (C) 2006, Weizmann Institute of Science - Rehovot, ISRAEL
@@ -34,10 +34,10 @@ create(Name, Value, Object, Values) :-
 	monitor;
 
     vector(Object),
-    arity(Object,OBJECT_REQUESTS) :
+    arity(Object, OBJECT_ARITY) :
       Value = _,
       Name = _,
-      Values' = Values?,
+      Values = Values'?,
       write_vector(OBJECT_REQUESTS, values(Values'), Object);
 
     otherwise |
